@@ -26,6 +26,8 @@
 		3F8517431E40B263003682C5 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F8517421E40B263003682C5 /* libsqlite3.tbd */; };
 		3F8517461E40B3D0003682C5 /* AppDatabase.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 3F8517451E40B3D0003682C5 /* AppDatabase.sqlite */; };
 		3FA378B01E40A99600BA85AB /* Applet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA378AF1E40A99600BA85AB /* Applet.swift */; };
+		3FCCC81C1E41EFAD00EECEBF /* AppletTriggerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCCC81B1E41EFAD00EECEBF /* AppletTriggerType.swift */; };
+		3FCCC81E1E41F19F00EECEBF /* AppletState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCCC81D1E41F19F00EECEBF /* AppletState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +87,8 @@
 		3F8517441E40B29D003682C5 /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
 		3F8517451E40B3D0003682C5 /* AppDatabase.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppDatabase.sqlite; sourceTree = "<group>"; };
 		3FA378AF1E40A99600BA85AB /* Applet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Applet.swift; sourceTree = "<group>"; };
+		3FCCC81B1E41EFAD00EECEBF /* AppletTriggerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppletTriggerType.swift; sourceTree = "<group>"; };
+		3FCCC81D1E41F19F00EECEBF /* AppletState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppletState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +209,8 @@
 			children = (
 				3F1559EF1E3F4B9E00490988 /* User.swift */,
 				3FA378AF1E40A99600BA85AB /* Applet.swift */,
+				3FCCC81B1E41EFAD00EECEBF /* AppletTriggerType.swift */,
+				3FCCC81D1E41F19F00EECEBF /* AppletState.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -371,6 +377,8 @@
 				3F85173E1E40B1BF003682C5 /* SQLiteManager.swift in Sources */,
 				3FA378B01E40A99600BA85AB /* Applet.swift in Sources */,
 				3F1559F11E3F4B9E00490988 /* Constants.swift in Sources */,
+				3FCCC81C1E41EFAD00EECEBF /* AppletTriggerType.swift in Sources */,
+				3FCCC81E1E41F19F00EECEBF /* AppletState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

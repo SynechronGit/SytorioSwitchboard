@@ -12,7 +12,7 @@ class Applet: NSObject {
     var id :String!
     var title :String!
     var descriptionText :String!
-    var triggerType :String!
+    var triggerType :AppletTriggerType!
     var triggerId :String!
     var workflowId :String!
     var workflowDefinitionId :String!
@@ -36,6 +36,10 @@ class Applet: NSObject {
         
         if pDictionary["AppletOnOff"] is Bool {
             self.isOn = pDictionary["AppletOnOff"] as! Bool
+        }
+        
+        if pDictionary["TriggerType"] is Int {
+            self.triggerType = AppletTriggerType(rawValue: pDictionary["TriggerType"] as! Int)
         }
     }
     
@@ -73,6 +77,10 @@ class Applet: NSObject {
         if pDictionary["IsOn"] is Bool {
             self.isOn = pDictionary["IsOn"] as! Bool
         }
+        
+        if pDictionary["TriggerType"] is Int {
+            self.triggerType = AppletTriggerType(rawValue: pDictionary["TriggerType"] as! Int)
+        }
     }
     
     
@@ -88,5 +96,20 @@ class Applet: NSObject {
         }
         
         return aReturnVal
+    }
+    
+    
+    var state :AppletState {
+        get {
+            var aReturnVal :AppletState = AppletState.notRunning
+            
+            if self.isOn {
+                aReturnVal = AppletState.running
+            } else {
+                aReturnVal = AppletState.notRunning
+            }
+            
+            return aReturnVal
+        }
     }
 }
