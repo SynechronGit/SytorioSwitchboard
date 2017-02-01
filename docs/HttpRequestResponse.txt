@@ -1,0 +1,58 @@
+----- BEGIN LOGIN -----
+
+## Request URL:
+http://api.sytor.io/token
+
+## Request Headers:
+
+
+## Request Body:
+grant_type=password&username=ashish.nangla&password=welcome1&client_id=EnsembleFX
+
+2017-01-31 16:41:59.756 SytorioSwitchboard[2300:54010] 
+## Response Status Code:
+200
+
+## Response Headers:
+Content-Type : application/json;charset=UTF-8
+Content-Encoding : gzip
+Content-Length : 951
+Set-Cookie : ARRAffinity=b3107b557f850021a2c7ea8f1ebeb288904d3f523c97e9095c794b7a46432411;Path=/;Domain=api.sytor.io
+Expires : -1
+Vary : Accept-Encoding
+Pragma : no-cache
+X-Powered-By : ASP.NET
+Server : Microsoft-IIS/8.0
+Cache-Control : no-cache
+Date : Tue, 31 Jan 2017 11:10:36 GMT
+
+## Response Body:
+{"access_token":"_g49W8jHEPDSsdd9HtHu31leehF7LPnBhnOs17NllTd1c8yRaqOnTG8zDpxnUVcT0UyfHyvrLuz2Kj4KtKF6PoNq-LU49auoECxMc6qrBIjsb2qGvR_Xih7GTN9dgofUkzjRSLM0K8xU16dtmQkgkff9uAUxyFf_cW4RN_Y7it7aPHmq_Z8aai65YaDk8lvOz6r2xf2qewBIM7TgB_rpRWUTuboX56guXcUv1WsyKRCukfue7ubitHZjOuizipMccBfaAxIuXvTpaXDCsTMSCpOFMKxSVFcWYlYcXi22dqOzgFr5lfjv1GpIiUOquAOUm8TKc-oJKiyAbS7Z-_3EKVobJ65CpYt2gozg0XDuGphGgksAt3YelOCiyicx0GAGOMgvIV6V3QuL8RTnYHFdOrPB3bwRkcTbFIjl9YRxvxeHXf4HAzNrySFSbG-OcsfqbnyWds5uzafIhKx_Fges316kiCT3xBF69E8_EOVR1-0eqWszrbmTpFYriW_w2i176JnSG5eQ97G8F7icJXD36Q","token_type":"bearer","expires_in":3599,"refresh_token":"faccffc52f8e40b09640d9ec4ba00832","as:client_id":"EnsembleFX","userName":"Ashish.Nangla","userId":"1","isUserAllowedAccessWhileMaintenance":"False","isSystemUnderMaintenance":"False","systemUnderMaintenanceId":"0",".issued":"Tue, 31 Jan 2017 11:10:36 GMT",".expires":"Tue, 31 Jan 2017 12:10:36 GMT"}
+
+
+
+----- BEGIN APPLET LIST -----
+
+## Request URL:
+http://api.sytor.io/Api/IftttApplet/GetAll
+
+## Request Headers:
+Content-Type : application/json; charset=utf-8
+Authorization : Bearer _g49W8jHEPDSsdd9HtHu31leehF7LPnBhnOs17NllTd1c8yRaqOnTG8zDpxnUVcT0UyfHyvrLuz2Kj4KtKF6PoNq-LU49auoECxMc6qrBIjsb2qGvR_Xih7GTN9dgofUkzjRSLM0K8xU16dtmQkgkff9uAUxyFf_cW4RN_Y7it7aPHmq_Z8aai65YaDk8lvOz6r2xf2qewBIM7TgB_rpRWUTuboX56guXcUv1WsyKRCukfue7ubitHZjOuizipMccBfaAxIuXvTpaXDCsTMSCpOFMKxSVFcWYlYcXi22dqOzgFr5lfjv1GpIiUOquAOUm8TKc-oJKiyAbS7Z-_3EKVobJ65CpYt2gozg0XDuGphGgksAt3YelOCiyicx0GAGOMgvIV6V3QuL8RTnYHFdOrPB3bwRkcTbFIjl9YRxvxeHXf4HAzNrySFSbG-OcsfqbnyWds5uzafIhKx_Fges316kiCT3xBF69E8_EOVR1-0eqWszrbmTpFYriW_w2i176JnSG5eQ97G8F7icJXD36Q
+
+2017-01-31 16:42:00.488 SytorioSwitchboard[2300:54008] 
+## Response Status Code:
+200
+
+## Response Headers:
+Content-Type : application/json; charset=utf-8
+Content-Length : 1155
+Vary : Accept-Encoding
+X-Powered-By : ASP.NET
+Server : Microsoft-IIS/8.0
+Date : Tue, 31 Jan 2017 11:10:36 GMT
+Content-Encoding : gzip
+
+## Response Body:
+[{"_id":"29f65ca7-7751-492a-832c-66fdfc5ee10b","AppletTitle":"app test","Description":"app test","TriggerType":1,"TriggerId":"f34b3f7c-7748-48cb-accc-076c060a3d7a","WorkflowId":"9d222206-82d8-436b-8e90-2436803d9f22","WorkflowDefinitionId":"00000000-0000-0000-0000-000000000000","AppletOnOff":false},{"_id":"4f20026c-774a-4291-a36a-9627380c775d","AppletTitle":"Applet1","Description":"Applet1","TriggerType":0,"TriggerId":"bd0aedab-0b74-4a03-bb15-eb22a669b341","WorkflowId":"df72f036-8d28-4567-8476-015fe734bb4a","WorkflowDefinitionId":"7281f1d6-6ce7-457a-a07d-9e44dd3c7ef6","AppletOnOff":false},{"_id":"086c261e-fe9d-422d-b77f-acca1e7a5db1","AppletTitle":"asa","Description":"asa","TriggerType":1,"TriggerId":"f34b3f7c-7748-48cb-accc-076c060a3d7a","WorkflowId":"228dd7d9-062f-402f-9bf9-2de440c90bc7","WorkflowDefinitionId":"f956d8e9-b67c-4a7d-ba2f-580078b9acc5","AppletOnOff":false},{"_id":"8e84c2a7-6cb1-4374-b0e8-9ae73a16fb59","AppletTitle":"email test","Description":"email test","TriggerType":1,"TriggerId":"f34b3f7c-7748-48cb-accc-076c060a3d7a","WorkflowId":"228dd7d9-062f-402f-9bf9-2de440c90bc7","WorkflowDefinitionId":"e09d97b6-d410-4319-9c89-2d9c77c5fc94","AppletOnOff":false},{"_id":"c0e24b6a-3e4c-40e9-8469-5c3cd7da1319","AppletTitle":"ff","Description":"ff","TriggerType":0,"TriggerId":"bc205077-1758-499a-b0d5-430fe4471818","WorkflowId":"25c7c6b8-b99e-41de-9caf-a551f20ac749","WorkflowDefinitionId":"29d28ab0-62f8-43c0-993c-07d16a3370ff","AppletOnOff":false},{"_id":"9f6adfcd-c39c-4ddd-9dce-c16d9b2a915a","AppletTitle":"Manual Test","Description":"Manual Test","TriggerType":3,"TriggerId":"00000000-0000-0000-0000-000000000000","WorkflowId":"f93e0a6a-07fe-41b8-bdf5-2c06dbaf5e9a","WorkflowDefinitionId":"00000000-0000-0000-0000-000000000000","AppletOnOff":false},{"_id":"5028fc91-5dea-463f-bda8-add2d72ed4e4","AppletTitle":"Send Personal Emails to my gmail box","Description":"Send Email When workflow starts","TriggerType":1,"TriggerId":"181267a8-7c30-4bfa-8297-ff1b4341c215","WorkflowId":"df72f036-8d28-4567-8476-015fe734bb4a","WorkflowDefinitionId":"3368402a-778d-43bf-abe7-658e3678e426","AppletOnOff":true}]
+

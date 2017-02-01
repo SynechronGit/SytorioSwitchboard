@@ -1,0 +1,655 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3F1559AF1E3F45E400490988 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1559AE1E3F45E400490988 /* LoginController.swift */; };
+		3F1559B21E3F45E400490988 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F1559B01E3F45E400490988 /* Main.storyboard */; };
+		3F1559B41E3F45E400490988 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F1559B31E3F45E400490988 /* Assets.xcassets */; };
+		3F1559B71E3F45E400490988 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F1559B51E3F45E400490988 /* LaunchScreen.storyboard */; };
+		3F1559C21E3F45E400490988 /* SytorioSwitchboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1559C11E3F45E400490988 /* SytorioSwitchboardTests.swift */; };
+		3F1559CD1E3F45E400490988 /* SytorioSwitchboardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1559CC1E3F45E400490988 /* SytorioSwitchboardUITests.swift */; };
+		3F1559DB1E3F464300490988 /* AppletListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1559DA1E3F464300490988 /* AppletListController.swift */; };
+		3F1559F01E3F4B9E00490988 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1559E71E3F4B9E00490988 /* Configuration.swift */; };
+		3F1559F11E3F4B9E00490988 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1559E81E3F4B9E00490988 /* Constants.swift */; };
+		3F1559F21E3F4B9E00490988 /* DataAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1559EA1E3F4B9E00490988 /* DataAdapter.swift */; };
+		3F1559F31E3F4B9E00490988 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1559EC1E3F4B9E00490988 /* AppDelegate.swift */; };
+		3F1559F41E3F4B9E00490988 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1559ED1E3F4B9E00490988 /* BaseController.swift */; };
+		3F1559F51E3F4B9E00490988 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1559EF1E3F4B9E00490988 /* User.swift */; };
+		3F1559F81E3F54A900490988 /* ATKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F1559F71E3F54A900490988 /* ATKit.framework */; };
+		3F1559FA1E3F6FB600490988 /* ATKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3F1559F71E3F54A900490988 /* ATKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3F85173E1E40B1BF003682C5 /* SQLiteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F85173D1E40B1BF003682C5 /* SQLiteManager.swift */; };
+		3F8517431E40B263003682C5 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F8517421E40B263003682C5 /* libsqlite3.tbd */; };
+		3F8517461E40B3D0003682C5 /* AppDatabase.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 3F8517451E40B3D0003682C5 /* AppDatabase.sqlite */; };
+		3FA378B01E40A99600BA85AB /* Applet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA378AF1E40A99600BA85AB /* Applet.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3F1559BE1E3F45E400490988 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3F1559A11E3F45E100490988 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3F1559A81E3F45E100490988;
+			remoteInfo = SytorioSwitchboard;
+		};
+		3F1559C91E3F45E400490988 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3F1559A11E3F45E100490988 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3F1559A81E3F45E100490988;
+			remoteInfo = SytorioSwitchboard;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3F1559FB1E3F6FB600490988 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3F1559FA1E3F6FB600490988 /* ATKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		3F1559A91E3F45E400490988 /* SytorioSwitchboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SytorioSwitchboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F1559AE1E3F45E400490988 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		3F1559B11E3F45E400490988 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3F1559B31E3F45E400490988 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3F1559B61E3F45E400490988 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3F1559B81E3F45E400490988 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F1559BD1E3F45E400490988 /* SytorioSwitchboardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SytorioSwitchboardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F1559C11E3F45E400490988 /* SytorioSwitchboardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SytorioSwitchboardTests.swift; sourceTree = "<group>"; };
+		3F1559C31E3F45E400490988 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F1559C81E3F45E400490988 /* SytorioSwitchboardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SytorioSwitchboardUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F1559CC1E3F45E400490988 /* SytorioSwitchboardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SytorioSwitchboardUITests.swift; sourceTree = "<group>"; };
+		3F1559CE1E3F45E400490988 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F1559DA1E3F464300490988 /* AppletListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppletListController.swift; sourceTree = "<group>"; };
+		3F1559E71E3F4B9E00490988 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		3F1559E81E3F4B9E00490988 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		3F1559EA1E3F4B9E00490988 /* DataAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataAdapter.swift; sourceTree = "<group>"; };
+		3F1559EC1E3F4B9E00490988 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3F1559ED1E3F4B9E00490988 /* BaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
+		3F1559EF1E3F4B9E00490988 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		3F1559F71E3F54A900490988 /* ATKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ATKit.framework; sourceTree = "<group>"; };
+		3F85173D1E40B1BF003682C5 /* SQLiteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteManager.swift; sourceTree = "<group>"; };
+		3F8517421E40B263003682C5 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		3F8517441E40B29D003682C5 /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
+		3F8517451E40B3D0003682C5 /* AppDatabase.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppDatabase.sqlite; sourceTree = "<group>"; };
+		3FA378AF1E40A99600BA85AB /* Applet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Applet.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3F1559A61E3F45E100490988 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F8517431E40B263003682C5 /* libsqlite3.tbd in Frameworks */,
+				3F1559F81E3F54A900490988 /* ATKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F1559BA1E3F45E400490988 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F1559C51E3F45E400490988 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3F1559A01E3F45E100490988 = {
+			isa = PBXGroup;
+			children = (
+				3F1559AB1E3F45E400490988 /* SytorioSwitchboard */,
+				3F1559C01E3F45E400490988 /* SytorioSwitchboardTests */,
+				3F1559CB1E3F45E400490988 /* SytorioSwitchboardUITests */,
+				3F1559AA1E3F45E400490988 /* Products */,
+				3F8517411E40B263003682C5 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		3F1559AA1E3F45E400490988 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3F1559A91E3F45E400490988 /* SytorioSwitchboard.app */,
+				3F1559BD1E3F45E400490988 /* SytorioSwitchboardTests.xctest */,
+				3F1559C81E3F45E400490988 /* SytorioSwitchboardUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3F1559AB1E3F45E400490988 /* SytorioSwitchboard */ = {
+			isa = PBXGroup;
+			children = (
+				3F1559F61E3F54A900490988 /* ThirdParty */,
+				3F1559E61E3F4B9E00490988 /* Assistants */,
+				3F1559E91E3F4B9E00490988 /* DataAdapter */,
+				3F1559EB1E3F4B9E00490988 /* Miscellaneous */,
+				3F1559EE1E3F4B9E00490988 /* Models */,
+				3F1559AE1E3F45E400490988 /* LoginController.swift */,
+				3F1559DA1E3F464300490988 /* AppletListController.swift */,
+				3F1559B01E3F45E400490988 /* Main.storyboard */,
+				3F1559B31E3F45E400490988 /* Assets.xcassets */,
+				3F1559B51E3F45E400490988 /* LaunchScreen.storyboard */,
+				3F1559B81E3F45E400490988 /* Info.plist */,
+			);
+			path = SytorioSwitchboard;
+			sourceTree = "<group>";
+		};
+		3F1559C01E3F45E400490988 /* SytorioSwitchboardTests */ = {
+			isa = PBXGroup;
+			children = (
+				3F1559C11E3F45E400490988 /* SytorioSwitchboardTests.swift */,
+				3F1559C31E3F45E400490988 /* Info.plist */,
+			);
+			path = SytorioSwitchboardTests;
+			sourceTree = "<group>";
+		};
+		3F1559CB1E3F45E400490988 /* SytorioSwitchboardUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3F1559CC1E3F45E400490988 /* SytorioSwitchboardUITests.swift */,
+				3F1559CE1E3F45E400490988 /* Info.plist */,
+			);
+			path = SytorioSwitchboardUITests;
+			sourceTree = "<group>";
+		};
+		3F1559E61E3F4B9E00490988 /* Assistants */ = {
+			isa = PBXGroup;
+			children = (
+				3F8517451E40B3D0003682C5 /* AppDatabase.sqlite */,
+				3F1559E71E3F4B9E00490988 /* Configuration.swift */,
+				3F1559E81E3F4B9E00490988 /* Constants.swift */,
+				3F8517441E40B29D003682C5 /* BridgingHeader.h */,
+			);
+			path = Assistants;
+			sourceTree = "<group>";
+		};
+		3F1559E91E3F4B9E00490988 /* DataAdapter */ = {
+			isa = PBXGroup;
+			children = (
+				3F1559EA1E3F4B9E00490988 /* DataAdapter.swift */,
+				3F85173D1E40B1BF003682C5 /* SQLiteManager.swift */,
+			);
+			path = DataAdapter;
+			sourceTree = "<group>";
+		};
+		3F1559EB1E3F4B9E00490988 /* Miscellaneous */ = {
+			isa = PBXGroup;
+			children = (
+				3F1559EC1E3F4B9E00490988 /* AppDelegate.swift */,
+				3F1559ED1E3F4B9E00490988 /* BaseController.swift */,
+			);
+			path = Miscellaneous;
+			sourceTree = "<group>";
+		};
+		3F1559EE1E3F4B9E00490988 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3F1559EF1E3F4B9E00490988 /* User.swift */,
+				3FA378AF1E40A99600BA85AB /* Applet.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3F1559F61E3F54A900490988 /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				3F1559F71E3F54A900490988 /* ATKit.framework */,
+			);
+			path = ThirdParty;
+			sourceTree = "<group>";
+		};
+		3F8517411E40B263003682C5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3F8517421E40B263003682C5 /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3F1559A81E3F45E100490988 /* SytorioSwitchboard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F1559D11E3F45E400490988 /* Build configuration list for PBXNativeTarget "SytorioSwitchboard" */;
+			buildPhases = (
+				3F1559A51E3F45E100490988 /* Sources */,
+				3F1559A61E3F45E100490988 /* Frameworks */,
+				3F1559A71E3F45E100490988 /* Resources */,
+				3F1559FB1E3F6FB600490988 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SytorioSwitchboard;
+			productName = SytorioSwitchboard;
+			productReference = 3F1559A91E3F45E400490988 /* SytorioSwitchboard.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3F1559BC1E3F45E400490988 /* SytorioSwitchboardTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F1559D41E3F45E400490988 /* Build configuration list for PBXNativeTarget "SytorioSwitchboardTests" */;
+			buildPhases = (
+				3F1559B91E3F45E400490988 /* Sources */,
+				3F1559BA1E3F45E400490988 /* Frameworks */,
+				3F1559BB1E3F45E400490988 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3F1559BF1E3F45E400490988 /* PBXTargetDependency */,
+			);
+			name = SytorioSwitchboardTests;
+			productName = SytorioSwitchboardTests;
+			productReference = 3F1559BD1E3F45E400490988 /* SytorioSwitchboardTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3F1559C71E3F45E400490988 /* SytorioSwitchboardUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F1559D71E3F45E400490988 /* Build configuration list for PBXNativeTarget "SytorioSwitchboardUITests" */;
+			buildPhases = (
+				3F1559C41E3F45E400490988 /* Sources */,
+				3F1559C51E3F45E400490988 /* Frameworks */,
+				3F1559C61E3F45E400490988 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3F1559CA1E3F45E400490988 /* PBXTargetDependency */,
+			);
+			name = SytorioSwitchboardUITests;
+			productName = SytorioSwitchboardUITests;
+			productReference = 3F1559C81E3F45E400490988 /* SytorioSwitchboardUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3F1559A11E3F45E100490988 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = com;
+				TargetAttributes = {
+					3F1559A81E3F45E100490988 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+					3F1559BC1E3F45E400490988 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 3F1559A81E3F45E100490988;
+					};
+					3F1559C71E3F45E400490988 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 3F1559A81E3F45E100490988;
+					};
+				};
+			};
+			buildConfigurationList = 3F1559A41E3F45E100490988 /* Build configuration list for PBXProject "SytorioSwitchboard" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3F1559A01E3F45E100490988;
+			productRefGroup = 3F1559AA1E3F45E400490988 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3F1559A81E3F45E100490988 /* SytorioSwitchboard */,
+				3F1559BC1E3F45E400490988 /* SytorioSwitchboardTests */,
+				3F1559C71E3F45E400490988 /* SytorioSwitchboardUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3F1559A71E3F45E100490988 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F8517461E40B3D0003682C5 /* AppDatabase.sqlite in Resources */,
+				3F1559B71E3F45E400490988 /* LaunchScreen.storyboard in Resources */,
+				3F1559B41E3F45E400490988 /* Assets.xcassets in Resources */,
+				3F1559B21E3F45E400490988 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F1559BB1E3F45E400490988 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F1559C61E3F45E400490988 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3F1559A51E3F45E100490988 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F1559F31E3F4B9E00490988 /* AppDelegate.swift in Sources */,
+				3F1559F01E3F4B9E00490988 /* Configuration.swift in Sources */,
+				3F1559F41E3F4B9E00490988 /* BaseController.swift in Sources */,
+				3F1559AF1E3F45E400490988 /* LoginController.swift in Sources */,
+				3F1559F51E3F4B9E00490988 /* User.swift in Sources */,
+				3F1559F21E3F4B9E00490988 /* DataAdapter.swift in Sources */,
+				3F1559DB1E3F464300490988 /* AppletListController.swift in Sources */,
+				3F85173E1E40B1BF003682C5 /* SQLiteManager.swift in Sources */,
+				3FA378B01E40A99600BA85AB /* Applet.swift in Sources */,
+				3F1559F11E3F4B9E00490988 /* Constants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F1559B91E3F45E400490988 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F1559C21E3F45E400490988 /* SytorioSwitchboardTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F1559C41E3F45E400490988 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F1559CD1E3F45E400490988 /* SytorioSwitchboardUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3F1559BF1E3F45E400490988 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3F1559A81E3F45E100490988 /* SytorioSwitchboard */;
+			targetProxy = 3F1559BE1E3F45E400490988 /* PBXContainerItemProxy */;
+		};
+		3F1559CA1E3F45E400490988 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3F1559A81E3F45E100490988 /* SytorioSwitchboard */;
+			targetProxy = 3F1559C91E3F45E400490988 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3F1559B01E3F45E400490988 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3F1559B11E3F45E400490988 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3F1559B51E3F45E400490988 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3F1559B61E3F45E400490988 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3F1559CF1E3F45E400490988 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3F1559D01E3F45E400490988 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3F1559D21E3F45E400490988 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SytorioSwitchboard/ThirdParty",
+				);
+				INFOPLIST_FILE = SytorioSwitchboard/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Synechron.SytorioSwitchboard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = SytorioSwitchboard/Assistants/BridgingHeader.h;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3F1559D31E3F45E400490988 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SytorioSwitchboard/ThirdParty",
+				);
+				INFOPLIST_FILE = SytorioSwitchboard/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Synechron.SytorioSwitchboard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = SytorioSwitchboard/Assistants/BridgingHeader.h;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3F1559D51E3F45E400490988 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SytorioSwitchboardTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Synechron.SytorioSwitchboardTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SytorioSwitchboard.app/SytorioSwitchboard";
+			};
+			name = Debug;
+		};
+		3F1559D61E3F45E400490988 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SytorioSwitchboardTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Synechron.SytorioSwitchboardTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SytorioSwitchboard.app/SytorioSwitchboard";
+			};
+			name = Release;
+		};
+		3F1559D81E3F45E400490988 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = SytorioSwitchboardUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Synechron.SytorioSwitchboardUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = SytorioSwitchboard;
+			};
+			name = Debug;
+		};
+		3F1559D91E3F45E400490988 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = SytorioSwitchboardUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Synechron.SytorioSwitchboardUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = SytorioSwitchboard;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3F1559A41E3F45E100490988 /* Build configuration list for PBXProject "SytorioSwitchboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F1559CF1E3F45E400490988 /* Debug */,
+				3F1559D01E3F45E400490988 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3F1559D11E3F45E400490988 /* Build configuration list for PBXNativeTarget "SytorioSwitchboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F1559D21E3F45E400490988 /* Debug */,
+				3F1559D31E3F45E400490988 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3F1559D41E3F45E400490988 /* Build configuration list for PBXNativeTarget "SytorioSwitchboardTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F1559D51E3F45E400490988 /* Debug */,
+				3F1559D61E3F45E400490988 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3F1559D71E3F45E400490988 /* Build configuration list for PBXNativeTarget "SytorioSwitchboardUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F1559D81E3F45E400490988 /* Debug */,
+				3F1559D91E3F45E400490988 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3F1559A11E3F45E100490988 /* Project object */;
+}
