@@ -7,9 +7,16 @@
 //
 
 import UIKit
+import ATKit
+
 
 class AppletListController: BaseController {
     var applets :Array<Applet>!
+    
+    @IBOutlet weak var totalAppletCountLabel: UILabel!
+    @IBOutlet weak var runningAppletCountLabel: UILabel!
+    @IBOutlet weak var notRunningAppletCountLabel: UILabel!
+    @IBOutlet weak var failedAppletCountLabel: UILabel!
     
     
     override func viewDidLoad() {
@@ -22,7 +29,9 @@ class AppletListController: BaseController {
     
     
     func reloadAllData() {
+        ATOverlay.sharedInstance.show()
         DataAdapter.sharedInstance.fetchAppletList(completion: {(pDataAdapterResult) in
+            ATOverlay.sharedInstance.hide()
             self.dataAdapterDidExecuteRequest(type: DataAdapterRequestType.fetchAppletList, result: pDataAdapterResult)
         })
     }
@@ -30,10 +39,22 @@ class AppletListController: BaseController {
     
     func reloadAllView() {
         if self.applets != nil {
-            NSLog("self.applets.count: %d", self.applets.count)
+            var aRunningAppletCount = 0
+            var aNotRunningAppletCount = 0
+            var aFailedAppletCount = 0
             for anApplet in self.applets {
-                NSLog("anApplet: %@", anApplet.title)
+                if anApplet.state == AppletState.running {
+                    aRunningAppletCount = aRunningAppletCount + 1
+                } else if anApplet.state == AppletState.notRunning {
+                    aNotRunningAppletCount = aNotRunningAppletCount + 1
+                } else if anApplet.state == AppletState.failed {
+                    aFailedAppletCount = aFailedAppletCount + 1
+                }
             }
+            self.totalAppletCountLabel.text = String(format: "%02d", self.applets.count)
+            self.runningAppletCountLabel.text = String(format: "%02d", aRunningAppletCount)
+            self.notRunningAppletCountLabel.text = String(format: "%02d", aNotRunningAppletCount)
+            self.failedAppletCountLabel.text = String(format: "%02d", aFailedAppletCount)
         }
     }
     
