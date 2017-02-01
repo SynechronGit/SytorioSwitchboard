@@ -10,6 +10,8 @@ import UIKit
 
 class LoginController: BaseController {
     
+    @IBOutlet weak var userTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,7 +28,11 @@ class LoginController: BaseController {
         })
     }
     
+    @IBAction func didSelectForgotPasswordButton(_ sender: Any) {
+    }
     
+    @IBAction func didSelectViewDemoButton(_ sender: Any) {
+    }
     // MARK: - Data Adapter Methods
     
     internal func dataAdapterDidExecuteRequest(type pRequestType: DataAdapterRequestType, result pResult: DataAdapterResult) {
