@@ -15,10 +15,14 @@ class Configuration: NSObject {
     var appRunEnvironmentType :AppRunEnvironmentType {
         get {
             var aReturnVal :AppRunEnvironmentType = AppRunEnvironmentType.httpApi
-            if UserDefaults.standard.dictionaryRepresentation().keys.contains("chatConversationType") {
-                aReturnVal = AppRunEnvironmentType(rawValue: UserDefaults.standard.string(forKey: "chatConversationType")!)
+            if UserDefaults.standard.dictionaryRepresentation().keys.contains("appRunEnvironmentType") {
+                aReturnVal = AppRunEnvironmentType(rawValue: UserDefaults.standard.string(forKey: "appRunEnvironmentType")!)
             }
             return aReturnVal
+        }
+        set {
+            UserDefaults.standard.setValue(newValue.rawValue, forKey: "appRunEnvironmentType")
+            UserDefaults.standard.synchronize()
         }
     }
     
