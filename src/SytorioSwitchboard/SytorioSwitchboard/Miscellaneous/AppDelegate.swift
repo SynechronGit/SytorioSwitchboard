@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        SQLiteManager.sharedInstance.sqliteFilePath = Constants.appSqliteFilePath
+        SQLiteManager.sharedInstance.sqliteFileUrl = Constants.appSqliteFileUrl
         return true
     }
 

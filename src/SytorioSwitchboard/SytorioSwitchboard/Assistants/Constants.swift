@@ -18,14 +18,17 @@ class Constants: NSObject {
     static var forgotPasswordUrl = "http://sytor.io/#/forgot"
     
     
-    static var appSqliteFilePath :String {
+    static var appSqliteFileUrl :URL {
         get {
+            var aReturnVal :URL! = nil
+            
             let aDocumentDirectoryPath :String! = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
-            let aReturnVal = String(format: "%@/AppDatabase.sqlite", aDocumentDirectoryPath)
+            let anAppDatabasePath = String(format: "%@/AppDatabase.sqlite", aDocumentDirectoryPath)
+            aReturnVal = URL(fileURLWithPath: anAppDatabasePath)
             do {
                 // If database is not available then create it. This code is written here so that all the other objects need not implement the database availability logic.
-                if FileManager.default.fileExists(atPath: aReturnVal) != true {
-                    try FileManager.default.copyItem(atPath: Bundle.main.path(forResource: "AppDatabase", ofType: "sqlite")!, toPath: aReturnVal)
+                if FileManager.default.fileExists(atPath: anAppDatabasePath) != true {
+                    try FileManager.default.copyItem(atPath: Bundle.main.path(forResource: "AppDatabase", ofType: "sqlite")!, toPath: anAppDatabasePath)
                 }
             } catch {
                 NSLog("Can not copy app database.")

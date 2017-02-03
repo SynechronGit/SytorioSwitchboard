@@ -13,7 +13,7 @@ import ATKit
 class SQLiteManager: NSObject {
     static let sharedInstance :SQLiteManager = SQLiteManager()
     
-    public var sqliteFilePath :String!
+    public var sqliteFileUrl :URL!
     
     
     public func executeQuery(_ pQuery:String!, values pValues:Array<AnyObject>!) throws -> Array<[String:AnyObject]>! {
@@ -21,8 +21,9 @@ class SQLiteManager: NSObject {
         
         do {
             var aDatabaseHandle: OpaquePointer? = nil
-            if sqlite3_open(self.sqliteFilePath, &aDatabaseHandle) != SQLITE_OK {
-                throw ATError.generic("Can not open database.")
+            let anOpenDatabaseResult = sqlite3_open(self.sqliteFileUrl.absoluteString, &aDatabaseHandle)
+            if anOpenDatabaseResult != SQLITE_OK {
+                throw ATError.generic(String(format: "Can not open database. Error: %d", anOpenDatabaseResult))
             }
             
             var anSqliteStatement: OpaquePointer? = nil

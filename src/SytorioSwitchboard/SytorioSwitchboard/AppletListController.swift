@@ -10,21 +10,39 @@ import UIKit
 import ATKit
 
 
-class AppletListController: BaseController {
+class AppletListController: BaseController, UICollectionViewDataSource, UICollectionViewDelegate {
     var applets :Array<Applet>!
     
-    @IBOutlet weak var totalAppletCountLabel: UILabel!
     @IBOutlet weak var runningAppletCountLabel: UILabel!
     @IBOutlet weak var notRunningAppletCountLabel: UILabel!
     @IBOutlet weak var failedAppletCountLabel: UILabel!
+    
+    @IBOutlet weak var appletListCollectionView: UICollectionView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.isNavigationBarHidden = false
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "LoginBanner")!)
+        self.appletListCollectionView.backgroundColor = UIColor(red: 250.0/255.0, green: 250.0/255.0, blue: 250.0/255.0, alpha: 1.0)
+        
+        let aPadding :CGFloat = 15.0
+        let aCellWidth = (self.appletListCollectionView.frame.size.width / 2.0) - (aPadding * 4)
+        let aCollectionViewFlowLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        aCollectionViewFlowLayout.sectionInset = UIEdgeInsets(top: aPadding, left: aPadding, bottom: aPadding, right: aPadding)
+        aCollectionViewFlowLayout.itemSize = CGSize(width: aCellWidth, height: aCellWidth)
+        aCollectionViewFlowLayout.minimumInteritemSpacing = aPadding / 2.0
+        aCollectionViewFlowLayout.minimumLineSpacing = aPadding / 2.0
+        self.appletListCollectionView.collectionViewLayout = aCollectionViewFlowLayout
         
         self.reloadAllData()
+    }
+    
+    
+    override func viewWillAppear(_ pAnimated: Bool) {
+        super.viewWillAppear(pAnimated)
+        
+        self.navigationController?.isNavigationBarHidden = false
     }
     
     
@@ -51,11 +69,36 @@ class AppletListController: BaseController {
                     aFailedAppletCount = aFailedAppletCount + 1
                 }
             }
-            self.totalAppletCountLabel.text = String(format: "%02d", self.applets.count)
             self.runningAppletCountLabel.text = String(format: "%02d", aRunningAppletCount)
             self.notRunningAppletCountLabel.text = String(format: "%02d", aNotRunningAppletCount)
             self.failedAppletCountLabel.text = String(format: "%02d", aFailedAppletCount)
+            
+            self.appletListCollectionView.reloadData()
         }
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        var aReturnVal :Int = 0
+        
+        if self.applets != nil {
+            aReturnVal = self.applets.count
+        }
+        
+        return aReturnVal
+    }
+    
+    
+    func collectionView(_ pCollectionView: UICollectionView, cellForItemAt pIndexPath: IndexPath) -> UICollectionViewCell {
+        let aReturnVal :AppletListCollectionCellView! = pCollectionView.dequeueReusableCell(withReuseIdentifier: "AppletCollectionCellReuseId", for: pIndexPath) as! AppletListCollectionCellView
+        
+        if self.applets != nil {
+            let anApplet = self.applets[pIndexPath.row]
+            
+            aReturnVal.appletTitleLabel.text = anApplet.title
+        }
+        
+        return aReturnVal
     }
     
     

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F10EA031E44BF1B00334773 /* AppletListCollectionCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F10EA021E44BF1B00334773 /* AppletListCollectionCellView.swift */; };
 		3F1559AF1E3F45E400490988 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1559AE1E3F45E400490988 /* LoginController.swift */; };
 		3F1559B21E3F45E400490988 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F1559B01E3F45E400490988 /* Main.storyboard */; };
 		3F1559B41E3F45E400490988 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F1559B31E3F45E400490988 /* Assets.xcassets */; };
@@ -62,6 +63,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3F10EA021E44BF1B00334773 /* AppletListCollectionCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppletListCollectionCellView.swift; sourceTree = "<group>"; };
 		3F1559A91E3F45E400490988 /* SytorioSwitchboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SytorioSwitchboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F1559AE1E3F45E400490988 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		3F1559B11E3F45E400490988 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				3F1559EE1E3F4B9E00490988 /* Models */,
 				3F1559AE1E3F45E400490988 /* LoginController.swift */,
 				3F1559DA1E3F464300490988 /* AppletListController.swift */,
+				3F10EA021E44BF1B00334773 /* AppletListCollectionCellView.swift */,
 				3F1559B01E3F45E400490988 /* Main.storyboard */,
 				3F1559B31E3F45E400490988 /* Assets.xcassets */,
 				3F1559B51E3F45E400490988 /* LaunchScreen.storyboard */,
@@ -374,6 +377,7 @@
 				3F1559F51E3F4B9E00490988 /* User.swift in Sources */,
 				3F1559F21E3F4B9E00490988 /* DataAdapter.swift in Sources */,
 				3F1559DB1E3F464300490988 /* AppletListController.swift in Sources */,
+				3F10EA031E44BF1B00334773 /* AppletListCollectionCellView.swift in Sources */,
 				3F85173E1E40B1BF003682C5 /* SQLiteManager.swift in Sources */,
 				3FA378B01E40A99600BA85AB /* Applet.swift in Sources */,
 				3F1559F11E3F4B9E00490988 /* Constants.swift in Sources */,
