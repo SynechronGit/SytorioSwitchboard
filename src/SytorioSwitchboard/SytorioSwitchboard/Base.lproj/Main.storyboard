@@ -36,11 +36,23 @@
                                     <action selector="didSelectLoginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xEu-dJ-riH"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoginBanner" translatesAutoresizingMaskIntoConstraints="NO" id="kBA-Q1-yb9">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoginBanner" translatesAutoresizingMaskIntoConstraints="NO" id="kBA-Q1-yb9">
                                 <rect key="frame" x="0.0" y="20" width="375" height="197"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="p5M-wn-5gx"/>
                                     <constraint firstAttribute="width" secondItem="kBA-Q1-yb9" secondAttribute="height" multiplier="375:197" id="xyX-4d-GKD"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="p5M-wn-5gx"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="p5M-wn-5gx"/>
+                                        <exclude reference="xyX-4d-GKD"/>
+                                    </mask>
+                                </variation>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="User" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pki-uR-2m0">
                                 <rect key="frame" x="51.5" y="285" width="272" height="30"/>
@@ -367,18 +379,42 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="klk-Kn-MRh"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vAs-dO-TGU">
+                                                    <rect key="frame" x="0.0" y="36" width="151" height="60"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2CX-oS-iMz">
+                                                    <rect key="frame" x="20" y="101" width="111" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="f73-v0-Fr5"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Play"/>
+                                                    <connections>
+                                                        <action selector="didSelectStartAppletButton:" destination="l3c-gm-efw" eventType="touchUpInside" id="5Am-xb-rN6"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                         </view>
                                         <constraints>
+                                            <constraint firstItem="vAs-dO-TGU" firstAttribute="top" secondItem="e8g-9P-Nsk" secondAttribute="bottom" constant="1" id="7eb-H4-AeG"/>
                                             <constraint firstAttribute="trailing" secondItem="e8g-9P-Nsk" secondAttribute="trailing" id="8Ti-U5-toZ"/>
+                                            <constraint firstAttribute="bottom" secondItem="2CX-oS-iMz" secondAttribute="bottom" id="9Y5-dB-atu"/>
                                             <constraint firstItem="e8g-9P-Nsk" firstAttribute="top" secondItem="l3c-gm-efw" secondAttribute="top" constant="5" id="AMY-CP-gnh"/>
+                                            <constraint firstItem="2CX-oS-iMz" firstAttribute="leading" secondItem="l3c-gm-efw" secondAttribute="leading" constant="20" id="KPI-xI-qim"/>
+                                            <constraint firstAttribute="trailing" secondItem="vAs-dO-TGU" secondAttribute="trailing" id="MDX-m6-Q1V"/>
+                                            <constraint firstItem="2CX-oS-iMz" firstAttribute="top" secondItem="vAs-dO-TGU" secondAttribute="bottom" constant="5" id="Rar-EB-PmO"/>
+                                            <constraint firstItem="vAs-dO-TGU" firstAttribute="leading" secondItem="l3c-gm-efw" secondAttribute="leading" id="YbV-4A-JfN"/>
+                                            <constraint firstAttribute="trailing" secondItem="2CX-oS-iMz" secondAttribute="trailing" constant="20" id="nm0-dE-6hx"/>
                                             <constraint firstItem="e8g-9P-Nsk" firstAttribute="leading" secondItem="l3c-gm-efw" secondAttribute="leading" id="sUL-Pi-Tg9"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="appletDescriptionLabel" destination="vAs-dO-TGU" id="bSh-za-2Xy"/>
                                             <outlet property="appletTitleLabel" destination="e8g-9P-Nsk" id="bbU-4d-Ypy"/>
                                         </connections>
                                     </collectionViewCell>

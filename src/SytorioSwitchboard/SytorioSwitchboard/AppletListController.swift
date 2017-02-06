@@ -10,7 +10,7 @@ import UIKit
 import ATKit
 
 
-class AppletListController: BaseController, UICollectionViewDataSource, UICollectionViewDelegate {
+class AppletListController: BaseController, UICollectionViewDataSource, UICollectionViewDelegate, AppletListCollectionCellViewDelegate {
     var applets :Array<Applet>!
     
     @IBOutlet weak var runningAppletCountLabel: UILabel!
@@ -43,6 +43,9 @@ class AppletListController: BaseController, UICollectionViewDataSource, UICollec
         super.viewWillAppear(pAnimated)
         
         self.navigationController?.isNavigationBarHidden = false
+        self.navigationItem.hidesBackButton = true
+        self.navBarLeftButtonImage = nil
+        self.navBarRightButtonImage = UIImage(named: "PlaceholderImage")
     }
     
     
@@ -78,6 +81,25 @@ class AppletListController: BaseController, UICollectionViewDataSource, UICollec
     }
     
     
+    override func didSelectNavBarRightButton(sender: UIButton!) {
+        GlobalData.loggedInUser = nil
+        _ = self.navigationController?.popViewController(animated: true)
+    }
+    
+    
+    // MARK: - AppletListCollectionCellViewDelegate Methods
+    
+    func appletListCollectionCellViewDidSelectStartAppletButton(_ pSender: AppletListCollectionCellView) {
+        let anIndexPath = self.appletListCollectionView.indexPath(for: pSender)
+        if anIndexPath != nil && self.applets != nil && self.applets.count > (anIndexPath?.row)! {
+            let anApplet = self.applets[(anIndexPath?.row)!]
+            NSLog("title: %@", anApplet.title)
+        }
+    }
+    
+    
+    // MARK: - UICollectionView Methods
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         var aReturnVal :Int = 0
         
@@ -96,6 +118,7 @@ class AppletListController: BaseController, UICollectionViewDataSource, UICollec
             let anApplet = self.applets[pIndexPath.row]
             
             aReturnVal.appletTitleLabel.text = anApplet.title
+            aReturnVal.delegate = self
         }
         
         return aReturnVal
