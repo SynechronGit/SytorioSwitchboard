@@ -10,7 +10,7 @@ import UIKit
 import ATKit
 
 
-class AppletListController: BaseController, UICollectionViewDataSource, UICollectionViewDelegate, AppletListCollectionCellViewDelegate {
+class AppletListController: BaseController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, AppletListCollectionCellViewDelegate {
     var applets :Array<Applet>!
     
     @IBOutlet weak var runningAppletCountLabel: UILabel!
@@ -122,6 +122,21 @@ class AppletListController: BaseController, UICollectionViewDataSource, UICollec
         }
         
         return aReturnVal
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let aCellWidth = (self.appletListCollectionView.frame.size.width / 2.0) - (10 * 2)
+        return CGSize(width: aCellWidth, height: aCellWidth)
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 10.0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 10.0
     }
     
     
