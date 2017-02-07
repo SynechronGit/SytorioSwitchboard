@@ -9,7 +9,9 @@
 import UIKit
 import ATKit
 
-class BaseController: UIViewController {
+let kTopBarButtonHeightWidth :CGFloat = 20.0
+
+class BaseController: UIViewController, ATDrawerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,9 +19,17 @@ class BaseController: UIViewController {
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
-        self.navigationController?.navigationBar.backgroundColor = UIColor(red: 148.0/255.0, green: 162.0/255.0, blue: 5.0/255.0, alpha: 1.0)
-        self.navigationController?.navigationBar.barStyle = UIBarStyle.blackTranslucent
+        self.navigationController?.navigationBar.backgroundColor = UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+        self.navigationController?.navigationBar.barStyle = UIBarStyle.default
         self.navigationController?.view.backgroundColor = self.navigationController?.navigationBar.backgroundColor
+        
+        self.navBarRightButtonImage = UIImage(named: "HamburgerMenu")
+    }
+    
+    
+    func logout() {
+        GlobalData.loggedInUser = nil
+        _ = self.navigationController?.popToRootViewController(animated: true)
     }
     
     
@@ -36,10 +46,10 @@ class BaseController: UIViewController {
             if _navBarLeftButtonImage != nil && _navBarLeftButtonImage.isKind(of: UIImage.self) {
                 self.navigationItem.hidesBackButton = true
                 let aButton: UIButton = UIButton(type: UIButtonType.custom) as UIButton
-                aButton.frame = CGRect(x: 0.0, y: 0.0, width: 40.0, height: 40.0)
+                aButton.frame = CGRect(x: 0.0, y: 0.0, width: kTopBarButtonHeightWidth, height: kTopBarButtonHeightWidth)
                 aButton.setImage(_navBarLeftButtonImage, for: UIControlState.normal)
                 aButton.imageView?.contentMode = .scaleAspectFit
-                aButton.contentEdgeInsets = UIEdgeInsets(top: 7.0, left: 7.0, bottom: 7.0, right: 7.0)
+                aButton.contentEdgeInsets = UIEdgeInsets(top: 7.0, left: 0.0, bottom: 0.0, right: 0.0)
                 aButton.addTarget(self, action: #selector(BaseController.didSelectNavBarLeftButton(sender:)), for: UIControlEvents.touchUpInside)
                 let aLeftBarButtonItem: UIBarButtonItem = UIBarButtonItem(customView: aButton)
                 self.navigationItem.setLeftBarButton(aLeftBarButtonItem, animated: false)
@@ -71,10 +81,10 @@ class BaseController: UIViewController {
             _navBarRightButtonImage = newValue
             if _navBarRightButtonImage != nil && _navBarRightButtonImage.isKind(of: UIImage.self) {
                 let aButton: UIButton = UIButton(type: UIButtonType.custom) as UIButton
-                aButton.frame = CGRect(x: 0.0, y: 0.0, width: 40.0, height: 40.0)
+                aButton.frame = CGRect(x: 0.0, y: 0.0, width: kTopBarButtonHeightWidth, height: kTopBarButtonHeightWidth)
                 aButton.setImage(_navBarRightButtonImage, for: UIControlState.normal)
                 aButton.imageView?.contentMode = .scaleAspectFit
-                aButton.contentEdgeInsets = UIEdgeInsets(top: 7.0, left: 7.0, bottom: 7.0, right: 7.0)
+                aButton.contentEdgeInsets = UIEdgeInsets(top: 7.0, left: 0.0, bottom: 0.0, right: 0.0)
                 aButton.addTarget(self, action: #selector(BaseController.didSelectNavBarRightButton(sender:)), for: UIControlEvents.touchUpInside)
                 let aRightBarButtonItem: UIBarButtonItem = UIBarButtonItem(customView: aButton)
                 self.navigationItem.setRightBarButton(aRightBarButtonItem, animated: false)
@@ -89,7 +99,10 @@ class BaseController: UIViewController {
      * Variable that will be called when right button on top bar is tapped.
      */
     func didSelectNavBarRightButton(sender:UIButton!) {
-        
+        ATDrawer.sharedInstance.drawerOptions = ["Logout"]
+        ATDrawer.sharedInstance.delegate = self
+        ATDrawer.sharedInstance.slideDirection = ATDrawerSlideDirection.rightToLeft
+        ATDrawer.sharedInstance.show()
     }
     
     
@@ -110,6 +123,29 @@ class BaseController: UIViewController {
             aToastType = ATToastType.information
         }
         ATToast.sharedInstance.show(message: pMessage, type: aToastType)
+    }
+    
+    
+    // MARK: - ATDrawer Methods
+    
+    @IBAction func didSelectSelectHideDrawerButton(_ sender: AnyObject) {
+        ATDrawer.sharedInstance.hide()
+    }
+    
+    
+    func atDrawer(_ pSender: ATDrawer, didSelectOptionAtIndex pIndex: Int) {
+        if pIndex == 0 {
+            self.logout()
+        }
+    }
+    
+}
+
+
+extension UINavigationBar {
+    
+    override open func sizeThatFits(_ size: CGSize) -> CGSize {
+        return CGSize(width: UIScreen.main.bounds.size.width, height: 30.0)
     }
     
 }

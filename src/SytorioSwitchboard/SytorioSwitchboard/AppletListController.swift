@@ -14,8 +14,11 @@ class AppletListController: BaseController, UICollectionViewDataSource, UICollec
     var applets :Array<Applet>!
     
     @IBOutlet weak var runningAppletCountLabel: UILabel!
+    @IBOutlet weak var runningAppletProgressView: UIProgressView!
     @IBOutlet weak var notRunningAppletCountLabel: UILabel!
+    @IBOutlet weak var notRunningAppletProgressView: UIProgressView!
     @IBOutlet weak var failedAppletCountLabel: UILabel!
+    @IBOutlet weak var failedAppletProgressView: UIProgressView!
     
     @IBOutlet weak var appletListCollectionView: UICollectionView!
     
@@ -23,7 +26,6 @@ class AppletListController: BaseController, UICollectionViewDataSource, UICollec
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "LoginBanner")!)
         self.appletListCollectionView.backgroundColor = UIColor(red: 250.0/255.0, green: 250.0/255.0, blue: 250.0/255.0, alpha: 1.0)
         
         let aPadding :CGFloat = 15.0
@@ -44,8 +46,7 @@ class AppletListController: BaseController, UICollectionViewDataSource, UICollec
         
         self.navigationController?.isNavigationBarHidden = false
         self.navigationItem.hidesBackButton = true
-        self.navBarLeftButtonImage = nil
-        self.navBarRightButtonImage = UIImage(named: "PlaceholderImage")
+        self.navBarLeftButtonImage = UIImage(named: "TopBarLogo")
     }
     
     
@@ -72,18 +73,18 @@ class AppletListController: BaseController, UICollectionViewDataSource, UICollec
                     aFailedAppletCount = aFailedAppletCount + 1
                 }
             }
+            
             self.runningAppletCountLabel.text = String(format: "%02d", aRunningAppletCount)
+            self.runningAppletProgressView.progress = Float(aRunningAppletCount) / Float(self.applets.count)
+            
             self.notRunningAppletCountLabel.text = String(format: "%02d", aNotRunningAppletCount)
+            self.notRunningAppletProgressView.progress = Float(aNotRunningAppletCount) / Float(self.applets.count)
+            
             self.failedAppletCountLabel.text = String(format: "%02d", aFailedAppletCount)
+            self.failedAppletProgressView.progress = Float(aFailedAppletCount) / Float(self.applets.count)
             
             self.appletListCollectionView.reloadData()
         }
-    }
-    
-    
-    override func didSelectNavBarRightButton(sender: UIButton!) {
-        GlobalData.loggedInUser = nil
-        _ = self.navigationController?.popViewController(animated: true)
     }
     
     
@@ -116,8 +117,7 @@ class AppletListController: BaseController, UICollectionViewDataSource, UICollec
         
         if self.applets != nil {
             let anApplet = self.applets[pIndexPath.row]
-            
-            aReturnVal.appletTitleLabel.text = anApplet.title
+            aReturnVal.loadApplet(anApplet)
             aReturnVal.delegate = self
         }
         
