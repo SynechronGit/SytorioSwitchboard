@@ -126,7 +126,10 @@ class AppletListController: BaseController, UICollectionViewDataSource, UICollec
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let aCellWidth = (self.appletListCollectionView.frame.size.width / 2.0) - (10 * 2)
+        var aCellWidth = (self.appletListCollectionView.frame.size.width / 2.0) - (10 * 2)
+        if aCellWidth > 170.0 {
+            aCellWidth = 170.0
+        }
         return CGSize(width: aCellWidth, height: aCellWidth)
     }
     
