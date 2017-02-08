@@ -303,7 +303,8 @@
 				TargetAttributes = {
 					3F1559A81E3F45E100490988 = {
 						CreatedOnToolsVersion = 8.2.1;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = N6ZJQTRK2Z;
+						ProvisioningStyle = Manual;
 					};
 					3F1559BC1E3F45E400490988 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -534,6 +535,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = N6ZJQTRK2Z;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SytorioSwitchboard/ThirdParty",
@@ -541,8 +545,10 @@
 				INFOPLIST_FILE = SytorioSwitchboard/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Synechron.SytorioSwitchboard;
+				PRODUCT_BUNDLE_IDENTIFIER = com.synechron.markel.sytorioswitchboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "a8b0e95a-3a57-467d-98ee-2c2b2f3753ea";
+				PROVISIONING_PROFILE_SPECIFIER = SynechronMarkelProdProfile;
 				SWIFT_OBJC_BRIDGING_HEADER = SytorioSwitchboard/Assistants/BridgingHeader.h;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -553,6 +559,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = N6ZJQTRK2Z;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SytorioSwitchboard/ThirdParty",
@@ -560,8 +569,10 @@
 				INFOPLIST_FILE = SytorioSwitchboard/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Synechron.SytorioSwitchboard;
+				PRODUCT_BUNDLE_IDENTIFIER = com.synechron.markel.sytorioswitchboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "a8b0e95a-3a57-467d-98ee-2c2b2f3753ea";
+				PROVISIONING_PROFILE_SPECIFIER = SynechronMarkelProdProfile;
 				SWIFT_OBJC_BRIDGING_HEADER = SytorioSwitchboard/Assistants/BridgingHeader.h;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
