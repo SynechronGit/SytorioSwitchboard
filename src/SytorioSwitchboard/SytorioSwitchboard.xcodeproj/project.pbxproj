@@ -26,6 +26,7 @@
 		3F85173E1E40B1BF003682C5 /* SQLiteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F85173D1E40B1BF003682C5 /* SQLiteManager.swift */; };
 		3F8517431E40B263003682C5 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F8517421E40B263003682C5 /* libsqlite3.tbd */; };
 		3F8517461E40B3D0003682C5 /* AppDatabase.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 3F8517451E40B3D0003682C5 /* AppDatabase.sqlite */; };
+		3F99BDC81E4C846C00C363E7 /* BackgroundTaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F99BDC71E4C846C00C363E7 /* BackgroundTaskManager.swift */; };
 		3FA378B01E40A99600BA85AB /* Applet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA378AF1E40A99600BA85AB /* Applet.swift */; };
 		3FCCC81C1E41EFAD00EECEBF /* AppletTriggerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCCC81B1E41EFAD00EECEBF /* AppletTriggerType.swift */; };
 		3FCCC81E1E41F19F00EECEBF /* AppletState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCCC81D1E41F19F00EECEBF /* AppletState.swift */; };
@@ -88,6 +89,7 @@
 		3F8517421E40B263003682C5 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		3F8517441E40B29D003682C5 /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
 		3F8517451E40B3D0003682C5 /* AppDatabase.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppDatabase.sqlite; sourceTree = "<group>"; };
+		3F99BDC71E4C846C00C363E7 /* BackgroundTaskManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundTaskManager.swift; sourceTree = "<group>"; };
 		3FA378AF1E40A99600BA85AB /* Applet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Applet.swift; sourceTree = "<group>"; };
 		3FCCC81B1E41EFAD00EECEBF /* AppletTriggerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppletTriggerType.swift; sourceTree = "<group>"; };
 		3FCCC81D1E41F19F00EECEBF /* AppletState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppletState.swift; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 			children = (
 				3F1559EC1E3F4B9E00490988 /* AppDelegate.swift */,
 				3F1559ED1E3F4B9E00490988 /* BaseController.swift */,
+				3F99BDC71E4C846C00C363E7 /* BackgroundTaskManager.swift */,
 			);
 			path = Miscellaneous;
 			sourceTree = "<group>";
@@ -375,6 +378,7 @@
 				3F1559F01E3F4B9E00490988 /* Configuration.swift in Sources */,
 				3F1559F41E3F4B9E00490988 /* BaseController.swift in Sources */,
 				3F1559AF1E3F45E400490988 /* LoginController.swift in Sources */,
+				3F99BDC81E4C846C00C363E7 /* BackgroundTaskManager.swift in Sources */,
 				3F1559F51E3F4B9E00490988 /* User.swift in Sources */,
 				3F1559F21E3F4B9E00490988 /* DataAdapter.swift in Sources */,
 				3F1559DB1E3F464300490988 /* AppletListController.swift in Sources */,

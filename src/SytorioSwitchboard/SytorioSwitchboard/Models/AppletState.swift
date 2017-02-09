@@ -27,4 +27,22 @@ enum AppletState :Int {
         }
         self = aValue
     }
+    
+    
+    var displayText :String {
+        get {
+            var aReturnVal :String = ""
+            
+            if self == AppletState.running {
+                aReturnVal = "Running"
+            } else if self == AppletState.running {
+                aReturnVal = "Not Running"
+            } else {
+                aReturnVal = "Failed"
+            }
+            
+            return aReturnVal
+        }
+    }
+    
 }

@@ -16,6 +16,7 @@ class Constants: NSObject {
     static var loginUserName = "ashish.nangla"
     static var loginUserPassword = "welcome1"
     static var forgotPasswordUrl = "http://sytor.io/#/forgot"
+    static var updateAppletsIntervalSeconds :TimeInterval = 5.0
     
     
     static var appSqliteFileUrl :URL {
