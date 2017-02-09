@@ -76,15 +76,17 @@ class BackgroundTaskManager: NSObject {
                             }
                         }
                         if aStateChangeAppletCount > 0 {
-                            let aNotification :UILocalNotification = UILocalNotification()
-                            if aStateChangeAppletCount == 1 {
-                                aNotification.alertBody = String(format: "State for applet \"%@\" has changed from \"%@\" to \"%@\".", aStateChangeAppletTitle, aStateChangeAppletOldState.displayText, aStateChangeAppletNewState.displayText)
-                            } else {
-                                aNotification.alertBody = String(format: "%d applets have their state changed.", aStateChangeAppletCount)
+                            DispatchQueue.main.async {
+                                let aNotification :UILocalNotification = UILocalNotification()
+                                if aStateChangeAppletCount == 1 {
+                                    aNotification.alertBody = String(format: "State for applet \"%@\" has changed from \"%@\" to \"%@\".", aStateChangeAppletTitle, aStateChangeAppletOldState.displayText, aStateChangeAppletNewState.displayText)
+                                } else {
+                                    aNotification.alertBody = String(format: "%d applets have their state changed.", aStateChangeAppletCount)
+                                }
+                                aNotification.alertAction = "OK"
+                                aNotification.fireDate = Date(timeIntervalSinceNow: 1.0)
+                                UIApplication.shared.scheduledLocalNotifications = [aNotification]
                             }
-                            aNotification.alertAction = "OK"
-                            aNotification.fireDate = Date(timeIntervalSinceNow: 1.0)
-                            UIApplication.shared.scheduledLocalNotifications = [aNotification]
                         }
                     }
                     
