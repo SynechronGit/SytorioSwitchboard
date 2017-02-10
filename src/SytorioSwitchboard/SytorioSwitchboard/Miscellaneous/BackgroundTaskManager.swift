@@ -20,22 +20,34 @@ class BackgroundTaskManager: NSObject {
     func bootstrap()  {
         if #available(iOS 10.0, *) {
             UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (pIsAuthorizationGranted, pError) in
-                DispatchQueue.main.async {
-                    if pIsAuthorizationGranted {
-                        if self.updateAppletsTimer != nil && self.updateAppletsTimer.isValid {
-                            self.updateAppletsTimer.invalidate()
-                        }
-                        self.updateAppletsTimer = Timer.scheduledTimer(timeInterval: Constants.updateAppletsIntervalSeconds, target: self, selector: #selector(BackgroundTaskManager.updateAppletList), userInfo: nil, repeats: true)
-                    }
+                if pIsAuthorizationGranted {
+                    self.startUpdateAppletsTimer()
                 }
             }
         } else {
-            // Fallback on earlier versions
+            let aUserNotificationSettings = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
+            UIApplication.shared.registerUserNotificationSettings(aUserNotificationSettings)
+            self.startUpdateAppletsTimer()
         }
     }
     
     
     func shutdown()  {
+        self.stopUpdateAppletsTimer()
+    }
+    
+    
+    func startUpdateAppletsTimer() {
+        DispatchQueue.main.async {
+            if self.updateAppletsTimer != nil && self.updateAppletsTimer.isValid {
+                self.updateAppletsTimer.invalidate()
+            }
+            self.updateAppletsTimer = Timer.scheduledTimer(timeInterval: Constants.updateAppletsIntervalSeconds, target: self, selector: #selector(BackgroundTaskManager.updateAppletList), userInfo: nil, repeats: true)
+        }
+    }
+    
+    
+    func stopUpdateAppletsTimer() {
         if self.updateAppletsTimer != nil && self.updateAppletsTimer.isValid {
             self.updateAppletsTimer.invalidate()
         }
@@ -84,7 +96,7 @@ class BackgroundTaskManager: NSObject {
                                     aNotification.alertBody = String(format: "%d applets have their state changed.", aStateChangeAppletCount)
                                 }
                                 aNotification.alertAction = "OK"
-                                aNotification.fireDate = Date(timeIntervalSinceNow: 1.0)
+                                aNotification.fireDate = Date(timeIntervalSinceNow: 0.3)
                                 UIApplication.shared.scheduledLocalNotifications = [aNotification]
                             }
                         }

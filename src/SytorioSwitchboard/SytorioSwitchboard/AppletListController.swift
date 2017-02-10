@@ -36,8 +36,6 @@ class AppletListController: BaseController, UICollectionViewDataSource, UICollec
         aCollectionViewFlowLayout.minimumInteritemSpacing = aPadding / 2.0
         aCollectionViewFlowLayout.minimumLineSpacing = aPadding / 2.0
         self.appletListCollectionView.collectionViewLayout = aCollectionViewFlowLayout
-        
-        self.reloadAllData()
     }
     
     
@@ -47,6 +45,13 @@ class AppletListController: BaseController, UICollectionViewDataSource, UICollec
         self.navigationController?.isNavigationBarHidden = false
         self.navigationItem.hidesBackButton = true
         self.navBarLeftButtonImage = UIImage(named: "TopBarLogo")
+    }
+    
+    
+    override func viewDidAppear(_ pAnimated: Bool) {
+        super.viewDidAppear(pAnimated)
+        
+        self.reloadAllData()
     }
     
     
