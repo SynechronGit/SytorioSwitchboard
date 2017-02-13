@@ -39,11 +39,11 @@ class AppletListCollectionCellView: UICollectionViewCell {
         self.appletDescriptionLabel.text = pApplet.descriptionText
         
         if pApplet.triggerType == AppletTriggerType.email {
-            self.topContainer.backgroundColor = UIColor(hexString: "275d8b")
+            self.topContainer.backgroundColor = UIColor(hexString: "275d8b") // Dark blue
         } else if pApplet.triggerType == AppletTriggerType.file {
-            self.topContainer.backgroundColor = UIColor(hexString: "28872b")
+            self.topContainer.backgroundColor = UIColor(hexString: "28872b") // Green
         } else {
-            self.topContainer.backgroundColor = UIColor(hexString: "1a8797")
+            self.topContainer.backgroundColor = UIColor(hexString: "1a8797") // Light blue
         }
         self.appletTitleLabel.backgroundColor = self.topContainer.backgroundColor
         self.appletDescriptionLabel.backgroundColor = self.topContainer.backgroundColor

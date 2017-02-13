@@ -99,7 +99,16 @@ class AppletListController: BaseController, UICollectionViewDataSource, UICollec
         let anIndexPath = self.appletListCollectionView.indexPath(for: pSender)
         if anIndexPath != nil && self.applets != nil && self.applets.count > (anIndexPath?.row)! {
             let anApplet = self.applets[(anIndexPath?.row)!]
-            NSLog("title: %@", anApplet.title)
+            if anApplet.isOn == true {
+                anApplet.isOn = false
+            } else {
+                anApplet.isOn = true
+            }
+            ATOverlay.sharedInstance.show()
+            DataAdapter.sharedInstance.updateApplet(anApplet, completion: {(pDataAdapterResult) in
+                ATOverlay.sharedInstance.hide()
+                self.dataAdapterDidExecuteRequest(type: DataAdapterRequestType.updateApplet, result: pDataAdapterResult)
+            })
         }
     }
     
@@ -159,6 +168,8 @@ class AppletListController: BaseController, UICollectionViewDataSource, UICollec
                     self.applets = nil
                 }
                 self.reloadAllView()
+            } else if pRequestType == DataAdapterRequestType.updateApplet {
+                self.reloadAllData()
             }
         } else {
             self.displayMessage(message: pResult.error.localizedDescription, type: MessageType.Error)

@@ -152,6 +152,74 @@ class DataAdapter: NSObject {
     }
     
     
+    internal func updateApplet(_ pApplet :Applet, completion pCompletion:@escaping (DataAdapterResult) -> Void) {
+        let aRequestType = DataAdapterRequestType.updateApplet
+        
+        if Configuration.sharedInstance.appRunEnvironmentType == AppRunEnvironmentType.httpApi {
+            let aNetworkManager :ATNetworkManager = ATNetworkManager()
+            
+            // Assign request id
+            aNetworkManager.requestId = UUID().uuidString
+            
+            // Assign request url
+            aNetworkManager.urlString = RequestUrl.updateApplet()
+            
+            // Assign request method
+            aNetworkManager.httpMethod = "PUT"
+            
+            // Assign request headers
+            aNetworkManager.httpRequestHeaders = self.defaultHttpRequestHeaders()
+            
+            // Assign request body
+            var anHttpRequestBodyString = "{"
+            anHttpRequestBodyString = anHttpRequestBodyString + "\"_id\" : \"" + pApplet.id + "\""
+            anHttpRequestBodyString = anHttpRequestBodyString + ", \"AppletTitle\" : \"" + pApplet.title + "\""
+            anHttpRequestBodyString = anHttpRequestBodyString + ", \"TriggerType\" : \"" + String(format: "%d", pApplet.triggerType.rawValue) + "\""
+            anHttpRequestBodyString = anHttpRequestBodyString + ", \"WorkflowId\" : \"" + pApplet.workflowId + "\""
+            anHttpRequestBodyString = anHttpRequestBodyString + ", \"AppletOnOff\" : " + (pApplet.isOn == true ? "true" : "false")
+            anHttpRequestBodyString = anHttpRequestBodyString + "}"
+            aNetworkManager.httpRequestBody = anHttpRequestBodyString.data(using: String.Encoding.utf8)
+            
+            // Assign request body form parameters
+            aNetworkManager.httpRequestParameters = nil
+            
+            // Assign request attachments
+            aNetworkManager.httpRequestAttachments = nil
+            aNetworkManager.encodeAttachmentsInBase64 = false
+            
+            // Assign response mapper
+            aNetworkManager.responseMapper = {pRequestId, pResponseStatusCode, pResponseHeaders, pResponseBodyData in
+                let aReturnVal :ATNetworkManagerResult = ATNetworkManagerResult()
+                
+                let aDataAdapterResult = DataAdapter.mapHttpResponse(requestType: aRequestType, responseStatusCode: pResponseStatusCode, responseHeaders: pResponseHeaders, responseBodyData: pResponseBodyData as Data?)
+                aReturnVal.error = aDataAdapterResult.error
+                aReturnVal.result = aDataAdapterResult.result as AnyObject!
+                
+                return aReturnVal
+            }
+            
+            // Send request
+            aNetworkManager.sendRequest(completion: { (pNetworkManagerResult) in
+                let aDataAdapterResult :DataAdapterResult = DataAdapterResult()
+                aDataAdapterResult.error = pNetworkManagerResult.error
+                aDataAdapterResult.result = pNetworkManagerResult.result
+                DispatchQueue.main.sync {
+                    pCompletion(aDataAdapterResult)
+                }
+            })
+        } else {
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Configuration.sharedInstance.sqliteRunEnvironmentResponseDelayInSeconds, execute: {() -> Void in
+                let aDataAdapterResult :DataAdapterResult = DataAdapterResult()
+                aDataAdapterResult.error = nil
+                aDataAdapterResult.result = nil
+                DispatchQueue.main.async {
+                    pCompletion(aDataAdapterResult)
+                }
+            })
+        }
+    }
+    
+    
     internal func defaultHttpRequestHeaders() -> Array<[String:String]> {
         var aReturnVal :Array<[String:String]> = Array<[String:String]>()
         
@@ -258,6 +326,10 @@ class RequestUrl: NSObject {
     internal static func fetchAppletList() ->String {
         return RequestUrl.base() + "/Api/IftttApplet/GetAll"
     }
+    
+    internal static func updateApplet() ->String {
+        return RequestUrl.base() + "/Api/IftttApplet/Update"
+    }
 }
 
 
@@ -271,9 +343,10 @@ public enum DataAdapterRequestType: String {
     case none = "none"
     case login = "login"
     case fetchAppletList = "fetchAppletList"
+    case updateApplet = "updateApplet"
     
     
-    static let allValues = [none, login]
+    static let allValues = [none, login, fetchAppletList, updateApplet]
     
     
     public init(rawValue pRawValue :String) {

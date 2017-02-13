@@ -41,6 +41,10 @@ class Applet: NSObject {
         if pDictionary["TriggerType"] is Int {
             self.triggerType = AppletTriggerType(rawValue: pDictionary["TriggerType"] as! Int)
         }
+        
+        if pDictionary["WorkflowId"] is String {
+            self.workflowId = pDictionary["WorkflowId"] as! String
+        }
     }
     
     
