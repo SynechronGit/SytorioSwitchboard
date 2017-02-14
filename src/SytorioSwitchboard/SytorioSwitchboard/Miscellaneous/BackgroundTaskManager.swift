@@ -56,7 +56,7 @@ class BackgroundTaskManager: NSObject {
     
     func updateAppletList() {
         if GlobalData.loggedInUser != nil && GlobalData.loggedInUser.accessToken != nil {
-            DataAdapter.sharedInstance.fetchAppletList(completion: {(pDataAdapterResult) in
+            DataAdapterFactory.sharedDataAdapter.fetchAppletList(completion: {(pDataAdapterResult) in
                 self.dataAdapterDidExecuteRequest(type: DataAdapterRequestType.fetchAppletList, result: pDataAdapterResult)
             })
         }

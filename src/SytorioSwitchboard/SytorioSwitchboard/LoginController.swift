@@ -53,7 +53,7 @@ class LoginController: BaseController {
         aUser.password = self.passwordTextField.text
         
         ATOverlay.sharedInstance.show()
-        DataAdapter.sharedInstance.login(aUser, completion: {(pDataAdapterResult) in
+        DataAdapterFactory.sharedDataAdapter.login(aUser, completion: {(pDataAdapterResult) in
             ATOverlay.sharedInstance.hide()
             self.dataAdapterDidExecuteRequest(type: DataAdapterRequestType.login, result: pDataAdapterResult)
         })

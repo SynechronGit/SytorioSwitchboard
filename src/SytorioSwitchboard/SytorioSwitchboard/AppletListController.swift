@@ -57,7 +57,7 @@ class AppletListController: BaseController, UICollectionViewDataSource, UICollec
     
     func reloadAllData() {
         ATOverlay.sharedInstance.show()
-        DataAdapter.sharedInstance.fetchAppletList(completion: {(pDataAdapterResult) in
+        DataAdapterFactory.sharedDataAdapter.fetchAppletList(completion: {(pDataAdapterResult) in
             ATOverlay.sharedInstance.hide()
             self.dataAdapterDidExecuteRequest(type: DataAdapterRequestType.fetchAppletList, result: pDataAdapterResult)
         })
@@ -105,7 +105,7 @@ class AppletListController: BaseController, UICollectionViewDataSource, UICollec
                 anApplet.isOn = true
             }
             ATOverlay.sharedInstance.show()
-            DataAdapter.sharedInstance.updateApplet(anApplet, completion: {(pDataAdapterResult) in
+            DataAdapterFactory.sharedDataAdapter.updateApplet(anApplet, completion: {(pDataAdapterResult) in
                 ATOverlay.sharedInstance.hide()
                 self.dataAdapterDidExecuteRequest(type: DataAdapterRequestType.updateApplet, result: pDataAdapterResult)
             })

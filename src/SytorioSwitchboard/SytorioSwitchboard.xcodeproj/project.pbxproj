@@ -28,6 +28,8 @@
 		3F8517461E40B3D0003682C5 /* AppDatabase.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 3F8517451E40B3D0003682C5 /* AppDatabase.sqlite */; };
 		3F99BDC81E4C846C00C363E7 /* BackgroundTaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F99BDC71E4C846C00C363E7 /* BackgroundTaskManager.swift */; };
 		3FA378B01E40A99600BA85AB /* Applet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA378AF1E40A99600BA85AB /* Applet.swift */; };
+		3FC367B01E531EB400D4B40E /* DataAdapterSqlite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC367AF1E531EB400D4B40E /* DataAdapterSqlite.swift */; };
+		3FC367B21E531EF100D4B40E /* DataAdapterHttp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC367B11E531EF100D4B40E /* DataAdapterHttp.swift */; };
 		3FCCC81C1E41EFAD00EECEBF /* AppletTriggerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCCC81B1E41EFAD00EECEBF /* AppletTriggerType.swift */; };
 		3FCCC81E1E41F19F00EECEBF /* AppletState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCCC81D1E41F19F00EECEBF /* AppletState.swift */; };
 /* End PBXBuildFile section */
@@ -91,6 +93,8 @@
 		3F8517451E40B3D0003682C5 /* AppDatabase.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppDatabase.sqlite; sourceTree = "<group>"; };
 		3F99BDC71E4C846C00C363E7 /* BackgroundTaskManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundTaskManager.swift; sourceTree = "<group>"; };
 		3FA378AF1E40A99600BA85AB /* Applet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Applet.swift; sourceTree = "<group>"; };
+		3FC367AF1E531EB400D4B40E /* DataAdapterSqlite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataAdapterSqlite.swift; sourceTree = "<group>"; };
+		3FC367B11E531EF100D4B40E /* DataAdapterHttp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataAdapterHttp.swift; sourceTree = "<group>"; };
 		3FCCC81B1E41EFAD00EECEBF /* AppletTriggerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppletTriggerType.swift; sourceTree = "<group>"; };
 		3FCCC81D1E41F19F00EECEBF /* AppletState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppletState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -195,6 +199,8 @@
 			isa = PBXGroup;
 			children = (
 				3F1559EA1E3F4B9E00490988 /* DataAdapter.swift */,
+				3FC367B11E531EF100D4B40E /* DataAdapterHttp.swift */,
+				3FC367AF1E531EB400D4B40E /* DataAdapterSqlite.swift */,
 				3F85173D1E40B1BF003682C5 /* SQLiteManager.swift */,
 			);
 			path = DataAdapter;
@@ -374,6 +380,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FC367B01E531EB400D4B40E /* DataAdapterSqlite.swift in Sources */,
 				3F1559F31E3F4B9E00490988 /* AppDelegate.swift in Sources */,
 				3F1559F01E3F4B9E00490988 /* Configuration.swift in Sources */,
 				3F1559F41E3F4B9E00490988 /* BaseController.swift in Sources */,
@@ -384,6 +391,7 @@
 				3F1559DB1E3F464300490988 /* AppletListController.swift in Sources */,
 				3F10EA031E44BF1B00334773 /* AppletListCollectionCellView.swift in Sources */,
 				3F85173E1E40B1BF003682C5 /* SQLiteManager.swift in Sources */,
+				3FC367B21E531EF100D4B40E /* DataAdapterHttp.swift in Sources */,
 				3FA378B01E40A99600BA85AB /* Applet.swift in Sources */,
 				3F1559F11E3F4B9E00490988 /* Constants.swift in Sources */,
 				3FCCC81C1E41EFAD00EECEBF /* AppletTriggerType.swift in Sources */,

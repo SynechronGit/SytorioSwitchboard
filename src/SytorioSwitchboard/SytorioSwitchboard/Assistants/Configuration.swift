@@ -27,5 +27,5 @@ class Configuration: NSObject {
     }
     
     
-    let sqliteRunEnvironmentResponseDelayInSeconds :Double = 2.0
+    let sqliteRunEnvironmentResponseDelayInSeconds :Double = 1.0
 }
