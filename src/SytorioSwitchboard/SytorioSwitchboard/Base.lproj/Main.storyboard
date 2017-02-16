@@ -493,10 +493,13 @@
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <connections>
                         <outlet property="appletListCollectionView" destination="9P4-6J-z0V" id="qGa-bE-KYq"/>
+                        <outlet property="failedAppletCountContainerView" destination="6KV-1m-wgC" id="eCW-in-SSf"/>
                         <outlet property="failedAppletCountLabel" destination="hPJ-av-fk6" id="TSw-6Q-9xU"/>
                         <outlet property="failedAppletProgressView" destination="NSl-18-ms4" id="jmw-qz-a0L"/>
+                        <outlet property="notRunningAppletCountContainerView" destination="GUp-du-td8" id="WLQ-gX-lJB"/>
                         <outlet property="notRunningAppletCountLabel" destination="byP-td-Xem" id="byc-DI-KT4"/>
                         <outlet property="notRunningAppletProgressView" destination="GHe-GM-pGX" id="4b6-dW-CNt"/>
+                        <outlet property="runningAppletCountContainerView" destination="sUa-M0-oT2" id="Lnj-P7-Vfa"/>
                         <outlet property="runningAppletCountLabel" destination="cGy-Vl-Sgk" id="Xvz-xG-qRo"/>
                         <outlet property="runningAppletProgressView" destination="3cM-st-Hos" id="ScY-lk-Td7"/>
                     </connections>

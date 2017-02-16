@@ -22,6 +22,10 @@ class AppletListController: BaseController, UICollectionViewDataSource, UICollec
     
     @IBOutlet weak var appletListCollectionView: UICollectionView!
     
+    @IBOutlet weak var runningAppletCountContainerView: UIView!
+    @IBOutlet weak var notRunningAppletCountContainerView: UIView!
+    @IBOutlet weak var failedAppletCountContainerView: UIView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,6 +94,21 @@ class AppletListController: BaseController, UICollectionViewDataSource, UICollec
             
             self.appletListCollectionView.reloadData()
         }
+    }
+    
+    
+    func displayRunningApplets() {
+    
+    }
+    
+    
+    func displayNotRunningApplets() {
+        
+    }
+    
+    
+    func displayFailedApplets() {
+        
     }
     
     
