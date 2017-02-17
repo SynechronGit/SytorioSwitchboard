@@ -9,9 +9,11 @@
 import UIKit
 import ATKit
 
-
 class AppletListController: BaseController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, AppletListCollectionCellViewDelegate {
+    
     var applets :Array<Applet>!
+    var filteredApplets: Array<Applet>!
+    var selectedAppletState:AppletState!
     
     @IBOutlet weak var runningAppletCountLabel: UILabel!
     @IBOutlet weak var runningAppletProgressView: UIProgressView!
@@ -40,6 +42,16 @@ class AppletListController: BaseController, UICollectionViewDataSource, UICollec
         aCollectionViewFlowLayout.minimumInteritemSpacing = aPadding / 2.0
         aCollectionViewFlowLayout.minimumLineSpacing = aPadding / 2.0
         self.appletListCollectionView.collectionViewLayout = aCollectionViewFlowLayout
+        
+        let runningAppletTapGesture = UITapGestureRecognizer(target: self, action: #selector(AppletListController.displayRunningApplets))
+        runningAppletCountContainerView.addGestureRecognizer(runningAppletTapGesture)
+        
+        let notRunningAppletTapGesture = UITapGestureRecognizer(target: self, action: #selector(AppletListController.displayNotRunningApplets))
+        notRunningAppletCountContainerView.addGestureRecognizer(notRunningAppletTapGesture)
+        
+        let failedAppletTapGesture = UITapGestureRecognizer(target: self, action: #selector(AppletListController.displayFailedApplets))
+        failedAppletCountContainerView.addGestureRecognizer(failedAppletTapGesture)
+        
     }
     
     
@@ -73,13 +85,28 @@ class AppletListController: BaseController, UICollectionViewDataSource, UICollec
             var aRunningAppletCount = 0
             var aNotRunningAppletCount = 0
             var aFailedAppletCount = 0
+            
+            self.filteredApplets = Array<Applet>()
+            
             for anApplet in self.applets {
+                
                 if anApplet.state == AppletState.running {
                     aRunningAppletCount = aRunningAppletCount + 1
+                    if self.selectedAppletState == AppletState.running {
+                        self.filteredApplets.append(anApplet)
+                    }
+                    
                 } else if anApplet.state == AppletState.notRunning {
                     aNotRunningAppletCount = aNotRunningAppletCount + 1
+                    if self.selectedAppletState == AppletState.notRunning {
+                        self.filteredApplets.append(anApplet)
+                    }
+                    
                 } else if anApplet.state == AppletState.failed {
                     aFailedAppletCount = aFailedAppletCount + 1
+                    if self.selectedAppletState == AppletState.failed {
+                        self.filteredApplets.append(anApplet)
+                    }
                 }
             }
             
@@ -92,6 +119,10 @@ class AppletListController: BaseController, UICollectionViewDataSource, UICollec
             self.failedAppletCountLabel.text = String(format: "%02d", aFailedAppletCount)
             self.failedAppletProgressView.progress = Float(aFailedAppletCount) / Float(self.applets.count)
             
+            if self.selectedAppletState == nil {
+                self.filteredApplets = self.applets
+            }
+            
             self.appletListCollectionView.reloadData()
         }
     }
@@ -99,16 +130,22 @@ class AppletListController: BaseController, UICollectionViewDataSource, UICollec
     
     func displayRunningApplets() {
     
+        self.selectedAppletState = AppletState.running
+        self.reloadAllView()
     }
     
     
     func displayNotRunningApplets() {
         
+        self.selectedAppletState = AppletState.notRunning
+        self.reloadAllView()
     }
     
     
     func displayFailedApplets() {
         
+        self.selectedAppletState = AppletState.failed
+        self.reloadAllView()
     }
     
     
@@ -116,8 +153,8 @@ class AppletListController: BaseController, UICollectionViewDataSource, UICollec
     
     func appletListCollectionCellViewDidSelectStartAppletButton(_ pSender: AppletListCollectionCellView) {
         let anIndexPath = self.appletListCollectionView.indexPath(for: pSender)
-        if anIndexPath != nil && self.applets != nil && self.applets.count > (anIndexPath?.row)! {
-            let anApplet = self.applets[(anIndexPath?.row)!]
+        if anIndexPath != nil && self.filteredApplets != nil && self.filteredApplets.count > (anIndexPath?.row)! {
+            let anApplet = self.filteredApplets[(anIndexPath?.row)!]
             if anApplet.isOn == true {
                 anApplet.isOn = false
             } else {
@@ -137,8 +174,8 @@ class AppletListController: BaseController, UICollectionViewDataSource, UICollec
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         var aReturnVal :Int = 0
         
-        if self.applets != nil {
-            aReturnVal = self.applets.count
+        if self.filteredApplets != nil {
+            aReturnVal = self.filteredApplets.count
         }
         
         return aReturnVal
@@ -148,8 +185,8 @@ class AppletListController: BaseController, UICollectionViewDataSource, UICollec
     func collectionView(_ pCollectionView: UICollectionView, cellForItemAt pIndexPath: IndexPath) -> UICollectionViewCell {
         let aReturnVal :AppletListCollectionCellView! = pCollectionView.dequeueReusableCell(withReuseIdentifier: "AppletCollectionCellReuseId", for: pIndexPath) as! AppletListCollectionCellView
         
-        if self.applets != nil {
-            let anApplet = self.applets[pIndexPath.row]
+        if self.filteredApplets != nil {
+            let anApplet = self.filteredApplets[pIndexPath.row]
             aReturnVal.loadApplet(anApplet)
             aReturnVal.delegate = self
         }
