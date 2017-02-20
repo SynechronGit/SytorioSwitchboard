@@ -13,11 +13,11 @@ import ATKit
 class AppletListController: BaseController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, AppletListCollectionCellViewDelegate {
     var applets :Array<Applet>!
     
-    @IBOutlet weak var runningAppletCountLabel: UILabel!
+    @IBOutlet weak var runningAppletCountLabel: ATLabel!
     @IBOutlet weak var runningAppletProgressView: UIProgressView!
-    @IBOutlet weak var notRunningAppletCountLabel: UILabel!
+    @IBOutlet weak var notRunningAppletCountLabel: ATLabel!
     @IBOutlet weak var notRunningAppletProgressView: UIProgressView!
-    @IBOutlet weak var failedAppletCountLabel: UILabel!
+    @IBOutlet weak var failedAppletCountLabel: ATLabel!
     @IBOutlet weak var failedAppletProgressView: UIProgressView!
     
     @IBOutlet weak var appletListCollectionView: UICollectionView!
@@ -40,6 +40,10 @@ class AppletListController: BaseController, UICollectionViewDataSource, UICollec
         aCollectionViewFlowLayout.minimumInteritemSpacing = aPadding / 2.0
         aCollectionViewFlowLayout.minimumLineSpacing = aPadding / 2.0
         self.appletListCollectionView.collectionViewLayout = aCollectionViewFlowLayout
+        
+        self.runningAppletCountLabel.animationDuration = 1.0
+        self.notRunningAppletCountLabel.animationDuration = 1.0
+        self.failedAppletCountLabel.animationDuration = 1.0
     }
     
     
@@ -83,14 +87,15 @@ class AppletListController: BaseController, UICollectionViewDataSource, UICollec
                 }
             }
             
-            self.runningAppletCountLabel.text = String(format: "%02d", aRunningAppletCount)
-            self.runningAppletProgressView.progress = Float(aRunningAppletCount) / Float(self.applets.count)
+            self.runningAppletCountLabel.animatedText = String(format: "%02d", aRunningAppletCount)
+            self.runningAppletProgressView.setProgress(Float(aRunningAppletCount) / Float(self.applets.count), animated: true)
             
-            self.notRunningAppletCountLabel.text = String(format: "%02d", aNotRunningAppletCount)
-            self.notRunningAppletProgressView.progress = Float(aNotRunningAppletCount) / Float(self.applets.count)
+            self.notRunningAppletCountLabel.animatedText = String(format: "%02d", aNotRunningAppletCount)
+            self.notRunningAppletProgressView.setProgress(Float(aNotRunningAppletCount) / Float(self.applets.count), animated: true)
             
-            self.failedAppletCountLabel.text = String(format: "%02d", aFailedAppletCount)
-            self.failedAppletProgressView.progress = Float(aFailedAppletCount) / Float(self.applets.count)
+            self.failedAppletCountLabel.animatedText = String(format: "%02d", aFailedAppletCount)
+            self.failedAppletProgressView.setProgress(Float(aFailedAppletCount) / Float(self.applets.count), animated: true)
+            
             
             self.appletListCollectionView.reloadData()
         }
