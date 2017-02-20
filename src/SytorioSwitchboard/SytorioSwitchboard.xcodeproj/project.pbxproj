@@ -23,6 +23,7 @@
 		3F1559F51E3F4B9E00490988 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1559EF1E3F4B9E00490988 /* User.swift */; };
 		3F1559F81E3F54A900490988 /* ATKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F1559F71E3F54A900490988 /* ATKit.framework */; };
 		3F1559FA1E3F6FB600490988 /* ATKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3F1559F71E3F54A900490988 /* ATKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3F7DF7021E5B130800846AC1 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7DF7011E5B130800846AC1 /* Utilities.swift */; };
 		3F85173E1E40B1BF003682C5 /* SQLiteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F85173D1E40B1BF003682C5 /* SQLiteManager.swift */; };
 		3F8517431E40B263003682C5 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F8517421E40B263003682C5 /* libsqlite3.tbd */; };
 		3F8517461E40B3D0003682C5 /* AppDatabase.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 3F8517451E40B3D0003682C5 /* AppDatabase.sqlite */; };
@@ -87,6 +88,7 @@
 		3F1559ED1E3F4B9E00490988 /* BaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
 		3F1559EF1E3F4B9E00490988 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		3F1559F71E3F54A900490988 /* ATKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ATKit.framework; sourceTree = "<group>"; };
+		3F7DF7011E5B130800846AC1 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		3F85173D1E40B1BF003682C5 /* SQLiteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteManager.swift; sourceTree = "<group>"; };
 		3F8517421E40B263003682C5 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		3F8517441E40B29D003682C5 /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 		3F1559E61E3F4B9E00490988 /* Assistants */ = {
 			isa = PBXGroup;
 			children = (
+				3F7DF7011E5B130800846AC1 /* Utilities.swift */,
 				3F8517451E40B3D0003682C5 /* AppDatabase.sqlite */,
 				3F1559E71E3F4B9E00490988 /* Configuration.swift */,
 				3F1559E81E3F4B9E00490988 /* Constants.swift */,
@@ -390,6 +393,7 @@
 				3F1559F21E3F4B9E00490988 /* DataAdapter.swift in Sources */,
 				3F1559DB1E3F464300490988 /* AppletListController.swift in Sources */,
 				3F10EA031E44BF1B00334773 /* AppletListCollectionCellView.swift in Sources */,
+				3F7DF7021E5B130800846AC1 /* Utilities.swift in Sources */,
 				3F85173E1E40B1BF003682C5 /* SQLiteManager.swift in Sources */,
 				3FC367B21E531EF100D4B40E /* DataAdapterHttp.swift in Sources */,
 				3FA378B01E40A99600BA85AB /* Applet.swift in Sources */,

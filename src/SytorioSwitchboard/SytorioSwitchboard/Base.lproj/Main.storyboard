@@ -163,8 +163,13 @@
                     <navigationItem key="navigationItem" id="2c1-QF-9pD"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="forgotPasswordButton" destination="oNk-CA-Sm5" id="Tzj-F5-cIe"/>
+                        <outlet property="loginButton" destination="RGH-Vd-k53" id="5Lu-cM-82E"/>
+                        <outlet property="passwordBottomBorderView" destination="5oj-U9-F67" id="naV-4e-oFw"/>
                         <outlet property="passwordTextField" destination="v7s-Oa-GPb" id="KD2-Qk-cBl"/>
+                        <outlet property="userBottomBorderView" destination="1pP-xp-1N3" id="xoH-PQ-7gG"/>
                         <outlet property="userTextField" destination="pki-uR-2m0" id="SB8-xs-Gon"/>
+                        <outlet property="viewDemoButton" destination="04l-0e-9NC" id="vba-ld-iYM"/>
                         <segue destination="FVD-cb-gbB" kind="show" identifier="LoginToAppletListSegueId" id="PVa-iB-psD"/>
                     </connections>
                 </viewController>
