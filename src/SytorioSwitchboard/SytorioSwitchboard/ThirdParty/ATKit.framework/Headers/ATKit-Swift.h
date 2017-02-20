@@ -326,13 +326,35 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+enum LTMorphingEffect : NSInteger;
+@protocol LTMorphingLabelDelegate;
+
+SWIFT_CLASS("_TtC5ATKit15LTMorphingLabel")
+@interface LTMorphingLabel : UILabel
+@property (nonatomic) float morphingProgress;
+@property (nonatomic) float morphingDuration;
+@property (nonatomic) float morphingCharacterDelay;
+@property (nonatomic) BOOL morphingEnabled;
+@property (nonatomic, weak) IBOutlet id <LTMorphingLabelDelegate> _Nullable delegate;
+@property (nonatomic) enum LTMorphingEffect morphingEffect;
+@property (nonatomic, strong) UIFont * _Null_unspecified font;
+@property (nonatomic, copy) NSString * _Null_unspecified text;
+- (void)setNeedsLayout;
+@property (nonatomic) CGRect bounds;
+@property (nonatomic) CGRect frame;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
 
 SWIFT_CLASS("_TtC5ATKit7ATLabel")
-@interface ATLabel : UILabel
+@interface ATLabel : LTMorphingLabel
 @property (nonatomic) BOOL shouldDisplayUnderline;
+@property (nonatomic) float animationDuration;
 - (void)drawRect:(CGRect)rect;
 - (void)drawTextInRect:(CGRect)rect;
 - (CGRect)textRectForBounds:(CGRect)bounds limitedToNumberOfLines:(NSInteger)limitedToNumberOfLines;
+@property (nonatomic, copy) NSString * _Null_unspecified animatedText;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -342,7 +364,6 @@ SWIFT_CLASS("_TtC5ATKit10ATLineView")
 @interface ATLineView : UIView
 @property (nonatomic) float width;
 @property (nonatomic, strong) UIColor * _Nonnull color;
-@property (nonatomic) float rotationAngleInDegrees;
 - (void)layoutSubviews;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
@@ -527,6 +548,68 @@ SWIFT_CLASS("_TtC5ATKit8ATWindow")
 - (nonnull instancetype)initWithCoder:(NSCoder * _Nonnull)pDecoder OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (void)awakeFromNib;
+@end
+
+
+SWIFT_CLASS("_TtC5ATKit13LTEmitterView")
+@interface LTEmitterView : UIView
+- (void)removeAllEmitters;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+typedef SWIFT_ENUM(NSInteger, LTMorphingEffect) {
+  LTMorphingEffectScale = 0,
+  LTMorphingEffectEvaporate = 1,
+  LTMorphingEffectFall = 2,
+  LTMorphingEffectPixelate = 3,
+  LTMorphingEffectSparkle = 4,
+  LTMorphingEffectBurn = 5,
+  LTMorphingEffectAnvil = 6,
+};
+
+
+
+@interface LTMorphingLabel (SWIFT_EXTENSION(ATKit))
+@end
+
+
+@interface LTMorphingLabel (SWIFT_EXTENSION(ATKit))
+@end
+
+
+@interface LTMorphingLabel (SWIFT_EXTENSION(ATKit))
+@end
+
+
+@interface LTMorphingLabel (SWIFT_EXTENSION(ATKit))
+@end
+
+
+@interface LTMorphingLabel (SWIFT_EXTENSION(ATKit))
+- (void)didMoveToSuperview;
+- (void)drawTextInRect:(CGRect)rect;
+@end
+
+
+@interface LTMorphingLabel (SWIFT_EXTENSION(ATKit))
+@end
+
+
+@interface LTMorphingLabel (SWIFT_EXTENSION(ATKit))
+@end
+
+
+@interface LTMorphingLabel (SWIFT_EXTENSION(ATKit))
+@end
+
+
+SWIFT_PROTOCOL("_TtP5ATKit23LTMorphingLabelDelegate_")
+@protocol LTMorphingLabelDelegate
+@optional
+- (void)morphingDidStart:(LTMorphingLabel * _Nonnull)label;
+- (void)morphingDidComplete:(LTMorphingLabel * _Nonnull)label;
+- (void)morphingOnProgress:(LTMorphingLabel * _Nonnull)label progress:(float)progress;
 @end
 
 
