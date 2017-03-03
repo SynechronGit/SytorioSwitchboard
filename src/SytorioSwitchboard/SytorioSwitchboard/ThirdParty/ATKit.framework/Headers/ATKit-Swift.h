@@ -351,12 +351,13 @@ SWIFT_CLASS("_TtC5ATKit7ATLabel")
 @interface ATLabel : LTMorphingLabel
 @property (nonatomic) BOOL shouldDisplayUnderline;
 @property (nonatomic) float animationDuration;
+- (nonnull instancetype)initWithCoder:(NSCoder * _Nonnull)pDecoder OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+- (void)awakeFromNib;
 - (void)drawRect:(CGRect)rect;
 - (void)drawTextInRect:(CGRect)rect;
 - (CGRect)textRectForBounds:(CGRect)bounds limitedToNumberOfLines:(NSInteger)limitedToNumberOfLines;
 @property (nonatomic, copy) NSString * _Null_unspecified animatedText;
-- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
@@ -364,6 +365,7 @@ SWIFT_CLASS("_TtC5ATKit10ATLineView")
 @interface ATLineView : UIView
 @property (nonatomic) float width;
 @property (nonatomic, strong) UIColor * _Nonnull color;
+@property (nonatomic) float rotationAngleInDegrees;
 - (void)layoutSubviews;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
@@ -559,13 +561,14 @@ SWIFT_CLASS("_TtC5ATKit13LTEmitterView")
 @end
 
 typedef SWIFT_ENUM(NSInteger, LTMorphingEffect) {
-  LTMorphingEffectScale = 0,
-  LTMorphingEffectEvaporate = 1,
-  LTMorphingEffectFall = 2,
-  LTMorphingEffectPixelate = 3,
-  LTMorphingEffectSparkle = 4,
-  LTMorphingEffectBurn = 5,
-  LTMorphingEffectAnvil = 6,
+  LTMorphingEffectNone = 0,
+  LTMorphingEffectScale = 1,
+  LTMorphingEffectEvaporate = 2,
+  LTMorphingEffectFall = 3,
+  LTMorphingEffectPixelate = 4,
+  LTMorphingEffectSparkle = 5,
+  LTMorphingEffectBurn = 6,
+  LTMorphingEffectAnvil = 7,
 };
 
 

@@ -4,10 +4,6 @@
 <dict>
 	<key>files</key>
 	<dict>
-		<key>ATKit</key>
-		<data>
-		CEeRGUqAf5AixY1s60YK2iKQnEw=
-		</data>
 		<key>Fire.png</key>
 		<data>
 		F0cZdgxwHcLCodlfEDZWGotiIgQ=
@@ -18,11 +14,15 @@
 		</data>
 		<key>Headers/ATKit-Swift.h</key>
 		<data>
-		UdudVu1FODTcI84g4QDMYEooacA=
+		yBvngygTiFqvVwQoo8MmvJoTxl0=
 		</data>
 		<key>Headers/ATKit.h</key>
 		<data>
 		Jm1O+MDTqrmiQOPvxBtvcuE3SkI=
+		</data>
+		<key>Info.plist</key>
+		<data>
+		shkl/UmYMqufvBX0KpinMQNlhss=
 		</data>
 		<key>Modules/ATKit.swiftmodule/arm.swiftdoc</key>
 		<data>
@@ -30,7 +30,7 @@
 		</data>
 		<key>Modules/ATKit.swiftmodule/arm.swiftmodule</key>
 		<data>
-		JHN+k68w0jGiEYj2sWAlymgBm24=
+		oacT1ZeHqZ21F3wg61Yig5ZJ87M=
 		</data>
 		<key>Modules/ATKit.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -38,7 +38,7 @@
 		</data>
 		<key>Modules/ATKit.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		Fa3eylgA6Iozrq0PkqVA+56Mc9M=
+		Jj8+amzxODEC82HqKzu8sZxfM6k=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -55,17 +55,6 @@
 	</dict>
 	<key>files2</key>
 	<dict>
-		<key>ATKit</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			CEeRGUqAf5AixY1s60YK2iKQnEw=
-			</data>
-			<key>hash2</key>
-			<data>
-			NtPBXAoCs2gi0F8afoVXgQmb2xcresLCwKPdyNshs6o=
-			</data>
-		</dict>
 		<key>Fire.png</key>
 		<dict>
 			<key>hash</key>
@@ -92,11 +81,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			UdudVu1FODTcI84g4QDMYEooacA=
+			yBvngygTiFqvVwQoo8MmvJoTxl0=
 			</data>
 			<key>hash2</key>
 			<data>
-			LxjjRDYnGB1/VoWrSHItdoVMt91HE6Tn2Ej2P38ZHnM=
+			WUa0ZYnzxAEWLrPowLP1FxoCq2xI+otbXGoRv6JkQ6w=
 			</data>
 		</dict>
 		<key>Headers/ATKit.h</key>
@@ -125,11 +114,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			JHN+k68w0jGiEYj2sWAlymgBm24=
+			oacT1ZeHqZ21F3wg61Yig5ZJ87M=
 			</data>
 			<key>hash2</key>
 			<data>
-			XL44OgJZX0dOGbIqc4xtGNCVx+NHRXfiQf4G9FU7AtU=
+			jLUGHOMLyhMDRbKgzJgT1bFEPOdSdok0A7hpu1ewZ4g=
 			</data>
 		</dict>
 		<key>Modules/ATKit.swiftmodule/arm64.swiftdoc</key>
@@ -147,11 +136,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Fa3eylgA6Iozrq0PkqVA+56Mc9M=
+			Jj8+amzxODEC82HqKzu8sZxfM6k=
 			</data>
 			<key>hash2</key>
 			<data>
-			KoR++Pdk9gfRkIGJemjLEeqDK0C+FgHIbcj93yND+3o=
+			s0fVlh8MshY0NEKWGCgCFKLyBRht10KEs7q4cBJwJTU=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
