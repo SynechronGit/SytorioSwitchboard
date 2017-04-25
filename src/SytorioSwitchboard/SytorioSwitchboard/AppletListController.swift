@@ -14,6 +14,7 @@ class AppletListController: BaseController, UICollectionViewDataSource, UICollec
     var applets :Array<Applet>!
     var filteredApplets: Array<Applet>!
     var selectedAppletState:AppletState!
+    var refresher:UIRefreshControl!
     
     @IBOutlet weak var runningAppletCountLabel: ATLabel!
     @IBOutlet weak var runningAppletProgressView: UIProgressView!
@@ -55,6 +56,12 @@ class AppletListController: BaseController, UICollectionViewDataSource, UICollec
         
         let failedAppletTapGesture = UITapGestureRecognizer(target: self, action: #selector(AppletListController.displayFailedApplets))
         failedAppletCountContainerView.addGestureRecognizer(failedAppletTapGesture)
+        
+        self.refresher = UIRefreshControl()
+        self.appletListCollectionView!.alwaysBounceVertical = true
+        refresher.tintColor = UIColor.gray
+        refresher.addTarget(self, action: #selector(refreshCollectionView), for: .valueChanged)
+        self.appletListCollectionView!.addSubview(refresher)
     }
     
     
@@ -152,6 +159,21 @@ class AppletListController: BaseController, UICollectionViewDataSource, UICollec
         self.reloadAllView()
     }
     
+    //MARK: - CollectionView Refresher Methods
+    
+    func refreshCollectionView() {
+        
+       DataAdapterFactory.sharedDataAdapter.fetchAppletList(completion: {(pDataAdapterResult) in
+            self.dataAdapterDidExecuteRequest(type: DataAdapterRequestType.fetchAppletList, result: pDataAdapterResult)
+        })
+
+        self.stopRefreshingCollectionView()
+    }
+    
+    func stopRefreshingCollectionView() {
+        
+        refresher.endRefreshing()
+    }
     
     // MARK: - AppletListCollectionCellViewDelegate Methods
     

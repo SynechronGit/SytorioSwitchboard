@@ -9,7 +9,7 @@
 import UIKit
 import ATKit
 
-let kTopBarButtonHeightWidth :CGFloat = 20.0
+let kTopBarButtonHeightWidth :CGFloat = 30.0
 
 class BaseController: UIViewController, ATDrawerDelegate {
     
@@ -22,6 +22,7 @@ class BaseController: UIViewController, ATDrawerDelegate {
         self.navigationController?.navigationBar.backgroundColor = UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 1.0)
         self.navigationController?.navigationBar.barStyle = UIBarStyle.default
         self.navigationController?.view.backgroundColor = self.navigationController?.navigationBar.backgroundColor
+        
         
         self.navBarRightButtonImage = UIImage(named: "HamburgerMenu")
     }
@@ -141,11 +142,3 @@ class BaseController: UIViewController, ATDrawerDelegate {
     
 }
 
-
-extension UINavigationBar {
-    
-    override open func sizeThatFits(_ size: CGSize) -> CGSize {
-        return CGSize(width: UIScreen.main.bounds.size.width, height: 30.0)
-    }
-    
-}
