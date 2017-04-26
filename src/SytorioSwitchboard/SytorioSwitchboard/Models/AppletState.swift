@@ -35,7 +35,7 @@ enum AppletState :Int {
             
             if self == AppletState.running {
                 aReturnVal = "Running"
-            } else if self == AppletState.running {
+            } else if self == AppletState.notRunning {
                 aReturnVal = "Not Running"
             } else {
                 aReturnVal = "Failed"
