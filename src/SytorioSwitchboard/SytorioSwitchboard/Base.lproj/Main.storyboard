@@ -199,10 +199,10 @@
                                 <rect key="frame" x="15" y="15" width="345" height="70"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sUa-M0-oT2" userLabel="runningAppletCountContainerView">
-                                        <rect key="frame" x="0.0" y="0.0" width="115" height="70"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="115.5" height="70"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RUNNING" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="scd-Jg-c7K">
-                                                <rect key="frame" x="0.0" y="47.5" width="115" height="21"/>
+                                                <rect key="frame" x="0.0" y="47.5" width="115.5" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="trc-t4-hca"/>
                                                 </constraints>
@@ -211,13 +211,13 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cGy-Vl-Sgk" customClass="ATLabel" customModule="ATKit">
-                                                <rect key="frame" x="0.0" y="0.0" width="115" height="47.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="115.5" height="47.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                                 <color key="textColor" red="0.00194161171" green="0.68379148280000002" blue="0.0030125873530000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" translatesAutoresizingMaskIntoConstraints="NO" id="3cM-st-Hos">
-                                                <rect key="frame" x="20" y="68.5" width="75" height="2.5"/>
+                                                <rect key="frame" x="20" y="68.5" width="75.5" height="2.5"/>
                                                 <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="tintColor" red="0.00194161171" green="0.68379148280000002" blue="0.0030125873530000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -225,7 +225,7 @@
                                                 </constraints>
                                             </progressView>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="0.75294117647058822" green="0.69019607843137254" blue="0.4823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="3cM-st-Hos" secondAttribute="bottom" id="0Kp-Bb-QHn"/>
                                             <constraint firstAttribute="trailing" secondItem="3cM-st-Hos" secondAttribute="trailing" constant="20" id="1D1-JZ-qm2"/>
@@ -240,7 +240,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GUp-du-td8" userLabel="notRunningAppletCountContainerView">
-                                        <rect key="frame" x="114.5" y="0.0" width="114.5" height="70"/>
+                                        <rect key="frame" x="115" y="0.0" width="114.5" height="70"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NOT RUNNING" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WPW-9Y-ZN7">
                                                 <rect key="frame" x="0.0" y="47.5" width="114.5" height="21"/>
@@ -281,10 +281,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6KV-1m-wgC" userLabel="failedAppletCountContainerView">
-                                        <rect key="frame" x="229" y="0.0" width="115" height="70"/>
+                                        <rect key="frame" x="229.5" y="0.0" width="115.5" height="70"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FAILED" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ggy-Gg-fHI">
-                                                <rect key="frame" x="0.0" y="47.5" width="115" height="21"/>
+                                                <rect key="frame" x="0.0" y="47.5" width="115.5" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="S9C-pV-bnQ"/>
                                                 </constraints>
@@ -293,13 +293,13 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hPJ-av-fk6" customClass="ATLabel" customModule="ATKit">
-                                                <rect key="frame" x="0.0" y="0.0" width="115" height="47.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="115.5" height="47.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" translatesAutoresizingMaskIntoConstraints="NO" id="NSl-18-ms4">
-                                                <rect key="frame" x="20" y="68.5" width="75" height="2.5"/>
+                                                <rect key="frame" x="20" y="68.5" width="75.5" height="2.5"/>
                                                 <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -335,7 +335,7 @@
                                     <constraint firstItem="sUa-M0-oT2" firstAttribute="top" secondItem="66a-3y-qOn" secondAttribute="top" id="dHt-Ie-GCa"/>
                                     <constraint firstItem="GUp-du-td8" firstAttribute="leading" secondItem="sUa-M0-oT2" secondAttribute="trailing" id="dOm-50-iHp"/>
                                     <constraint firstItem="sUa-M0-oT2" firstAttribute="width" secondItem="6KV-1m-wgC" secondAttribute="width" id="dkA-Ne-gAK"/>
-                                    <constraint firstAttribute="trailing" secondItem="6KV-1m-wgC" secondAttribute="trailing" constant="1" id="qKn-HN-3b0"/>
+                                    <constraint firstAttribute="trailing" secondItem="6KV-1m-wgC" secondAttribute="trailing" id="qKn-HN-3b0"/>
                                     <constraint firstItem="GUp-du-td8" firstAttribute="bottom" secondItem="sUa-M0-oT2" secondAttribute="bottom" id="t0L-ne-Cy7"/>
                                 </constraints>
                             </view>

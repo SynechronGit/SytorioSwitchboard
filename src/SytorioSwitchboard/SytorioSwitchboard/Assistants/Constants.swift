@@ -13,12 +13,13 @@ import UIKit
  * Class to hold constants
  */
 class Constants: NSObject {
+    
     static var loginUserName = "ashish.nangla"
     static var loginUserPassword = "welcome1"
     static var forgotPasswordUrl = "http://sytor.io/#/forgot"
     static var updateAppletsIntervalSeconds :TimeInterval = 5.0
-    
-    
+    static var selectedAppletBackgroundColor = UIColor(red: 210.0/255.0, green: 210.0/255.0, blue: 210.0/255.0, alpha: 1)
+   
     static var appSqliteFileUrl :URL {
         get {
             var aReturnVal :URL! = nil

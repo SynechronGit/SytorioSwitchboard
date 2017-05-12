@@ -48,14 +48,17 @@ class AppletListController: BaseController, UICollectionViewDataSource, UICollec
         self.notRunningAppletCountLabel.animationDuration = 1.0
         self.failedAppletCountLabel.animationDuration = 1.0
         
-        let runningAppletTapGesture = UITapGestureRecognizer(target: self, action: #selector(AppletListController.displayRunningApplets))
+        let runningAppletTapGesture = UITapGestureRecognizer(target: self, action: #selector(AppletListController.didSelectRunningApplets))
         runningAppletCountContainerView.addGestureRecognizer(runningAppletTapGesture)
         
-        let notRunningAppletTapGesture = UITapGestureRecognizer(target: self, action: #selector(AppletListController.displayNotRunningApplets))
+        let notRunningAppletTapGesture = UITapGestureRecognizer(target: self, action: #selector(AppletListController.didSelectNotRunningApplets))
         notRunningAppletCountContainerView.addGestureRecognizer(notRunningAppletTapGesture)
         
-        let failedAppletTapGesture = UITapGestureRecognizer(target: self, action: #selector(AppletListController.displayFailedApplets))
+        let failedAppletTapGesture = UITapGestureRecognizer(target: self, action: #selector(AppletListController.didSelectFailedApplets))
         failedAppletCountContainerView.addGestureRecognizer(failedAppletTapGesture)
+        
+        self.selectedAppletState = AppletState.running
+        self.runningAppletCountContainerView.backgroundColor = Constants.selectedAppletBackgroundColor
         
         self.refresher = UIRefreshControl()
         self.appletListCollectionView!.alwaysBounceVertical = true
@@ -139,21 +142,35 @@ class AppletListController: BaseController, UICollectionViewDataSource, UICollec
     }
     
     
-    func displayRunningApplets() {
+    //MARK: - Selector Methods
     
+    func didSelectRunningApplets() {
+    
+        self.runningAppletCountContainerView.backgroundColor = Constants.selectedAppletBackgroundColor
+        self.notRunningAppletCountContainerView.backgroundColor = UIColor.white
+        self.failedAppletCountContainerView.backgroundColor = UIColor.white
+        
         self.selectedAppletState = AppletState.running
         self.reloadAllView()
     }
     
     
-    func displayNotRunningApplets() {
+    func didSelectNotRunningApplets() {
+        
+        self.runningAppletCountContainerView.backgroundColor = UIColor.white
+        self.notRunningAppletCountContainerView.backgroundColor = Constants.selectedAppletBackgroundColor
+        self.failedAppletCountContainerView.backgroundColor = UIColor.white
         
         self.selectedAppletState = AppletState.notRunning
         self.reloadAllView()
     }
     
     
-    func displayFailedApplets() {
+    func didSelectFailedApplets() {
+        
+        self.runningAppletCountContainerView.backgroundColor = UIColor.white
+        self.notRunningAppletCountContainerView.backgroundColor = UIColor.white
+        self.failedAppletCountContainerView.backgroundColor = Constants.selectedAppletBackgroundColor
         
         self.selectedAppletState = AppletState.failed
         self.reloadAllView()
