@@ -583,8 +583,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.synechron.markel.sytorioswitchboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a8b0e95a-3a57-467d-98ee-2c2b2f3753ea";
-				PROVISIONING_PROFILE_SPECIFIER = SynechronMarkelProdProfile;
+				PROVISIONING_PROFILE = "73a5f13a-e29b-4e1d-8934-37b9a6398bd5";
+				PROVISIONING_PROFILE_SPECIFIER = "Markel -  Universal Distribution";
 				SWIFT_OBJC_BRIDGING_HEADER = SytorioSwitchboard/Assistants/BridgingHeader.h;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -611,8 +611,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.synechron.markel.sytorioswitchboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a8b0e95a-3a57-467d-98ee-2c2b2f3753ea";
-				PROVISIONING_PROFILE_SPECIFIER = SynechronMarkelProdProfile;
+				PROVISIONING_PROFILE = "73a5f13a-e29b-4e1d-8934-37b9a6398bd5";
+				PROVISIONING_PROFILE_SPECIFIER = "Markel -  Universal Distribution";
 				SWIFT_OBJC_BRIDGING_HEADER = SytorioSwitchboard/Assistants/BridgingHeader.h;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
