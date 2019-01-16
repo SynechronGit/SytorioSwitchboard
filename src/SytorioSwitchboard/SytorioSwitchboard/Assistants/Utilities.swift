@@ -54,3 +54,89 @@ public enum AnimationType : Int {
     case fadeIn
     case fadeOut
 }
+
+
+public extension UIColor {
+    convenience init(hexString pHexString:String) {
+        var aHexString:String = pHexString.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).uppercased()
+        if aHexString.hasPrefix("#") {
+            aHexString = aHexString.substring(from: aHexString.characters.index(aHexString.startIndex, offsetBy: 1))
+        }
+        
+        var aRedComponent :CGFloat = 0.0
+        var aGreenComponent :CGFloat = 0.0
+        var aBlueComponent :CGFloat = 0.0
+        let anAlphaComponent :CGFloat = 1.0
+        
+        if aHexString.characters.count == 6 {
+            var anRgbValue:UInt32 = 0
+            Scanner(string: aHexString).scanHexInt32(&anRgbValue)
+            
+            aRedComponent = CGFloat((anRgbValue & 0xFF0000) >> 16) / 255.0
+            aGreenComponent = CGFloat((anRgbValue & 0x00FF00) >> 8) / 255.0
+            aBlueComponent = CGFloat(anRgbValue & 0x0000FF) / 255.0
+        }
+        
+        self.init(red: aRedComponent, green: aGreenComponent, blue: aBlueComponent, alpha: anAlphaComponent)
+    }
+    
+    
+    public var redComponent :CGFloat {
+        get {
+            var aReturnVal :CGFloat = 0.0
+            
+            let aComponentPointer = self.cgColor.components
+            let aComponentCount = self.cgColor.numberOfComponents
+            if aComponentCount >= 1 {
+                aReturnVal = (aComponentPointer?[0])!
+            }
+            
+            return aReturnVal
+        }
+    }
+    
+    
+    public var greenComponent :CGFloat {
+        get {
+            var aReturnVal :CGFloat = 0.0
+            
+            let aComponentPointer = self.cgColor.components
+            let aComponentCount = self.cgColor.numberOfComponents
+            if aComponentCount >= 2 {
+                aReturnVal = (aComponentPointer?[1])!
+            }
+            
+            return aReturnVal
+        }
+    }
+    
+    
+    public var blueComponent :CGFloat {
+        get {
+            var aReturnVal :CGFloat = 0.0
+            
+            let aComponentPointer = self.cgColor.components
+            let aComponentCount = self.cgColor.numberOfComponents
+            if aComponentCount >= 3 {
+                aReturnVal = (aComponentPointer?[2])!
+            }
+            
+            return aReturnVal
+        }
+    }
+    
+    
+    public var alphaComponent :CGFloat {
+        get {
+            var aReturnVal :CGFloat = 0.0
+            
+            let aComponentPointer = self.cgColor.components
+            let aComponentCount = self.cgColor.numberOfComponents
+            if aComponentCount >= 4 {
+                aReturnVal = (aComponentPointer?[3])!
+            }
+            
+            return aReturnVal
+        }
+    }
+}

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import ATKit
 
 
 class SQLiteManager: NSObject {
@@ -23,7 +22,7 @@ class SQLiteManager: NSObject {
             var aDatabaseHandle: OpaquePointer? = nil
             let anOpenDatabaseResult = sqlite3_open(self.sqliteFileUrl.absoluteString, &aDatabaseHandle)
             if anOpenDatabaseResult != SQLITE_OK {
-                throw ATError.generic(String(format: "Can not open database. Error: %d", anOpenDatabaseResult))
+                throw NSError(domain: "error", code: 1, userInfo: [NSLocalizedDescriptionKey : String(format: "Can not open database. Error: %d", anOpenDatabaseResult)])
             }
             
             var anSqliteStatement: OpaquePointer? = nil
@@ -33,26 +32,26 @@ class SQLiteManager: NSObject {
                         let aValue = pValues[anIndex]
                         if aValue is String {
                             if sqlite3_bind_text(anSqliteStatement, Int32(anIndex + 1), (aValue as! NSString).utf8String, -1, nil) != SQLITE_OK {
-                                throw ATError.generic("Can not bind value.")
+                                throw NSError(domain: "error", code: 1, userInfo: [NSLocalizedDescriptionKey : "Can not bind value."])
                             }
                         } else if aValue is NSNumber {
                             if sqlite3_bind_int(anSqliteStatement, Int32(anIndex + 1), Int32((aValue as! NSNumber).intValue)) != SQLITE_OK {
-                                throw ATError.generic("Can not bind value.")
+                                throw NSError(domain: "error", code: 1, userInfo: [NSLocalizedDescriptionKey : "Can not bind value."])
                             }
                         } else if aValue is NSNull {
                             if sqlite3_bind_null(anSqliteStatement, Int32(anIndex + 1)) != SQLITE_OK {
-                                throw ATError.generic("Can not bind value.")
+                                throw NSError(domain: "error", code: 1, userInfo: [NSLocalizedDescriptionKey : "Can not bind value."])
                             }
                         } else if aValue is NSData {
                             if sqlite3_bind_blob(anSqliteStatement, Int32(anIndex + 1), (aValue as! NSData).bytes, Int32((aValue as! NSData).length), nil) != SQLITE_OK {
-                                throw ATError.generic("Can not bind value.")
+                                throw NSError(domain: "error", code: 1, userInfo: [NSLocalizedDescriptionKey : "Can not bind value."])
                             }
                         }
                     }
                 }
             } else {
                 let anErrorMessage = String(cString: sqlite3_errmsg(aDatabaseHandle))
-                throw ATError.generic("Can not prepare statement. Error: " + anErrorMessage)
+                throw NSError(domain: "error", code: 1, userInfo: [NSLocalizedDescriptionKey : ("Can not prepare statement. Error: " + anErrorMessage)])
             }
             
             while true {
@@ -90,13 +89,13 @@ class SQLiteManager: NSObject {
                 } else if anSqliteStepResult == SQLITE_DONE {
                     break
                 } else {
-                    throw ATError.generic("Can not step statement.")
+                    throw NSError(domain: "error", code: 1, userInfo: [NSLocalizedDescriptionKey : "Can not step statement."])
                 }
             }
             
             if sqlite3_finalize(anSqliteStatement) != SQLITE_OK {
                 let anErrorMessage = String(cString: sqlite3_errmsg(aDatabaseHandle))
-                throw ATError.generic(String(format: "Can not finalize statement. Error: %@", anErrorMessage))
+                throw NSError(domain: "error", code: 1, userInfo: [NSLocalizedDescriptionKey : String(format: "Can not finalize statement. Error: %@", anErrorMessage)])
             }
             
             defer {
@@ -104,10 +103,8 @@ class SQLiteManager: NSObject {
                     sqlite3_close(aDatabaseHandle)
                 }
             }
-        } catch ATError.generic(let pErrorMessage){
-            throw ATError.generic(pErrorMessage)
         } catch {
-            throw ATError.generic("Execute query error.")
+            throw error
         }
         
         if aReturnVal.count <= 0 {

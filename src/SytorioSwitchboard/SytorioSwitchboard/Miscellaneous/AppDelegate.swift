@@ -57,7 +57,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func bootstrap() {
         SQLiteManager.sharedInstance.sqliteFileUrl = Constants.appSqliteFileUrl
-        ATOverlay.sharedInstance.shouldBlurBackground = false
     }
     
     

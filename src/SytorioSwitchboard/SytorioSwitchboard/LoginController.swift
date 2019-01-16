@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import ATKit
 
 
 class LoginController: BaseController {
@@ -104,9 +103,9 @@ class LoginController: BaseController {
         aUser.userName = self.userTextField.text
         aUser.password = self.passwordTextField.text
         
-        ATOverlay.sharedInstance.show()
+        ProgressOverlay.sharedInstance.show()
         DataAdapterFactory.sharedDataAdapter.login(aUser, completion: {(pDataAdapterResult) in
-            ATOverlay.sharedInstance.hide()
+            ProgressOverlay.sharedInstance.hide()
             self.dataAdapterDidExecuteRequest(type: DataAdapterRequestType.login, result: pDataAdapterResult)
         })
     }

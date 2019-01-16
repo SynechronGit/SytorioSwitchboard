@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import ATKit
 
 
 class DataAdapterSqlite: DataAdapter {
@@ -26,9 +25,6 @@ class DataAdapterSqlite: DataAdapter {
                 let aResult :DataAdapterResult = DataAdapterSqlite.mapSqliteResponse(requestType: aRequestType, sqliteResult: anSqlResult)
                 aDataAdapterResult.result = aResult.result
                 aDataAdapterResult.error = aResult.error
-            } catch ATError.generic(let pErrorMessage) {
-                aDataAdapterResult.result = nil
-                aDataAdapterResult.error = NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:pErrorMessage])
             } catch {
                 aDataAdapterResult.result = nil
                 aDataAdapterResult.error = NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:error.localizedDescription])
@@ -55,9 +51,6 @@ class DataAdapterSqlite: DataAdapter {
                 let aResult :DataAdapterResult = DataAdapterSqlite.mapSqliteResponse(requestType: aRequestType, sqliteResult: anSqlResult)
                 aDataAdapterResult.result = aResult.result
                 aDataAdapterResult.error = aResult.error
-            } catch ATError.generic(let pErrorMessage) {
-                aDataAdapterResult.result = nil
-                aDataAdapterResult.error = NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:pErrorMessage])
             } catch {
                 aDataAdapterResult.result = nil
                 aDataAdapterResult.error = NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:error.localizedDescription])
@@ -88,9 +81,6 @@ class DataAdapterSqlite: DataAdapter {
                 let aResult :DataAdapterResult = DataAdapterSqlite.mapSqliteResponse(requestType: aRequestType, sqliteResult: anSqlResult)
                 aDataAdapterResult.result = aResult.result
                 aDataAdapterResult.error = aResult.error
-            } catch ATError.generic(let pErrorMessage) {
-                aDataAdapterResult.result = nil
-                aDataAdapterResult.error = NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:pErrorMessage])
             } catch {
                 aDataAdapterResult.result = nil
                 aDataAdapterResult.error = NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:error.localizedDescription])
@@ -118,14 +108,11 @@ class DataAdapterSqlite: DataAdapter {
                     let anAppletArray :Array<Applet>! = Applet.array(sqliteDictArray: pSqliteResult!)
                     aReturnVal.result = anAppletArray
                 } else {
-                    throw ATError.generic("Can not map fetch applet list sqlite result.")
+                    throw NSError(domain: "error", code: 1, userInfo: [NSLocalizedDescriptionKey : "Can not map fetch applet list sqlite result."])
                 }
             } else if pRequestType == DataAdapterRequestType.updateApplet {
                 aReturnVal.result = true
             }
-        } catch ATError.generic(let pErrorMessage) {
-            NSLog("mapSqliteResponse error")
-            aReturnVal.error = NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:pErrorMessage])
         } catch {
             NSLog("mapSqliteResponse exception")
             aReturnVal.error = NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:error.localizedDescription])

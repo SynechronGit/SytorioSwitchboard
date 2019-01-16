@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import ATKit
 
 
 class DataAdapterHttp: DataAdapter {
@@ -192,7 +191,7 @@ class DataAdapterHttp: DataAdapter {
                 if aResponseDict != nil {
                     aMessage = (aResponseDict as! NSDictionary).value(forKey: "error") as! String!
                 }
-                throw ATError.generic((aMessage != nil ? (aMessage as String) : "Unknown Error"))
+                throw NSError(domain: "error", code: 1, userInfo: [NSLocalizedDescriptionKey : (aMessage != nil ? (aMessage as String) : "Unknown Error")])
             }
             
             // Map json response to model objects.
@@ -204,7 +203,7 @@ class DataAdapterHttp: DataAdapter {
                     aUser.accessToken = (aResponseDict as! NSDictionary).value(forKey: "access_token") as! String
                     aReturnVal.result = aUser
                 } else {
-                    throw ATError.generic("Can not map login response.")
+                    throw NSError(domain: "error", code: 1, userInfo: [NSLocalizedDescriptionKey : "Can not map login response."])
                 }
             } else if pRequestType == DataAdapterRequestType.fetchAppletList {
                 if (aResponseDict is NSArray) {
@@ -212,12 +211,9 @@ class DataAdapterHttp: DataAdapter {
                     let anAppletArray :Array<Applet>! = Applet.array(httpApiDictArray: aDictArray as! Array<[String : Any]>)
                     aReturnVal.result = anAppletArray
                 } else {
-                    throw ATError.generic("Can not map fetch applet list response.")
+                    throw NSError(domain: "error", code: 1, userInfo: [NSLocalizedDescriptionKey : "Can not map fetch applet list response."])
                 }
             }
-        } catch ATError.generic(let pErrorMessage) {
-            NSLog("mapHttpResponse error")
-            aReturnVal.error = NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:pErrorMessage])
         } catch {
             NSLog("mapHttpResponse exception")
             aReturnVal.error = NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:error.localizedDescription])

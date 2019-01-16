@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import ATKit
+
 
 class AppletListController: BaseController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, AppletListCollectionCellViewDelegate {
     
@@ -85,9 +85,9 @@ class AppletListController: BaseController, UICollectionViewDataSource, UICollec
     
     
     func reloadAllData() {
-        ATOverlay.sharedInstance.show()
+        ProgressOverlay.sharedInstance.show()
         DataAdapterFactory.sharedDataAdapter.fetchAppletList(completion: {(pDataAdapterResult) in
-            ATOverlay.sharedInstance.hide()
+            ProgressOverlay.sharedInstance.hide()
             self.dataAdapterDidExecuteRequest(type: DataAdapterRequestType.fetchAppletList, result: pDataAdapterResult)
         })
     }
@@ -203,9 +203,9 @@ class AppletListController: BaseController, UICollectionViewDataSource, UICollec
             } else {
                 anApplet.isOn = true
             }
-            ATOverlay.sharedInstance.show()
+            ProgressOverlay.sharedInstance.show()
             DataAdapterFactory.sharedDataAdapter.updateApplet(anApplet, completion: {(pDataAdapterResult) in
-                ATOverlay.sharedInstance.hide()
+                ProgressOverlay.sharedInstance.hide()
                 self.dataAdapterDidExecuteRequest(type: DataAdapterRequestType.updateApplet, result: pDataAdapterResult)
             })
         }
